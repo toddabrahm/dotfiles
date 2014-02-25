@@ -1,0 +1,55 @@
+[user]
+    name = toddabrahm
+    email = todd@toddabrahm.com
+[core]
+    excludesfile = ~/.gitignore_global
+    editor = vim
+[color]
+    ui = true
+[alias]
+    this = !git init && git add . && git commit -m \"initial commit\"
+    s = status
+    b = branch
+    bn = checkout -b
+    bd = branch -d
+    co = checkout
+    mas = checkout master
+    dev = checkout dev
+    a = add
+    aa = !git add . && git status
+    c= commit
+    cm = commit -m
+    cma = commit -am
+    cmaa = !git add . && git commit -m
+    ca = commit --amend
+    d = diff --color-words
+    ds = diff --staged --color-words
+    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %ar%Creset'
+    ll = log --stat --abbrev-commit
+    ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >>.gitignore
+    st = stash
+    stl = stash list
+    stp = stash pop
+    std = stash drop
+    cl = clone
+    f = fetch
+    gr = grep
+    m = merge
+    pl = pull
+    ps = push
+    rb = rebase
+    rbi = rebase -i
+    rbc = rebase --continue
+    re = reset
+    tg = tag
+    showless = "!sh -c 'git show --color=always $1 | less -R' -"
+    deploy = !git subtree push --prefix dist origin master
+    dammit = !git reset --soft HEAD^
+    heckit = !git reset --hard HEAD
+    ctags = !.git/hooks/ctags
+[credential]
+	helper = osxkeychain
+[github]
+	user = toddabrahm
+[init]
+	templatedir = ~/.git_template

@@ -1,0 +1,6 @@
+# Handle .md files
+--type-set=md=.md
+--type-add=md=.mkd
+--type-add=md=.markdown
+# Handle Sass files
+--type-add=css=.scss

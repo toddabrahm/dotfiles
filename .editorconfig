@@ -1,0 +1,19 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# 4 space indentation
+[*.{py,php}]
+indent_style = space
+indent_size = 4
+
+# 2 space indentation
+[*.{jade,haml,rb,md}]
+indent_style = space
+indent_size = 2
