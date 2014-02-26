@@ -15,7 +15,7 @@ unsetopt correct_all
 export TERM=xterm-256color
 export EDITOR=~/bin/vim
 export HISTSIZE=1000
-export HISTFILESIZE=1000
+export HISTFILESIZE=100000
 export HISTCONTROL=erasedups
 export GREP_OPTIONS='--color=auto'
 export PATH="/usr/local/share/npm/bin:${PATH}"
