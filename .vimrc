@@ -131,6 +131,7 @@ set cpoptions+=$
 set backspace=indent,eol,start
 set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
 set spelllang=en_us
+set lazyredraw
 
 " Ignore
 set wildignore+=node_modules
