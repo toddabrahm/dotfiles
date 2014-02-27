@@ -123,6 +123,17 @@ b64() {
     cat $1 | openssl enc -base64 | tr -d '\n' | pbcopy
 }
 
+# URL encode and echo
+function url-encode () {
+        setopt extendedglob
+        echo "${${(j: :)@}//(#b)(?)/%$[[##16]##${match[1]}]}"
+}
+
+# search google
+function google () {
+       chrome "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
+}
+
 # ----------------------------------------------------------------
 # Misc
 # ----------------------------------------------------------------
