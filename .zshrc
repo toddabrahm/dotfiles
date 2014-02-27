@@ -89,6 +89,11 @@ alias v='f -e vim'       # quick opening files with vim
 # FUNCTIONS
 # ----------------------------------------------------------------
 
+# collapsed pwd relative to $HOME
+pwdr () {
+    echo $(pwd | sed -e "s,^$HOME,~,")
+}
+
 # Colorize less and cat output with Pygments
 lessp () {
     pygmentize -O style=solarized -f console256 -g "$1" | less
