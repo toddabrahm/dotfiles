@@ -157,6 +157,8 @@ map <leader>da :bufdo silent! bdelete<CR>
 nnoremap <leader>tm :SignatureToggle<CR>
 nnoremap <leader>bk m'ddggP''
 nnoremap <leader>bj m'ddGp''
+nnoremap vaa ggvGg_
+nnoremap Vaa ggVG
 nmap <F5> :redraw!<CR>
 call togglebg#map("<F6>")
 
