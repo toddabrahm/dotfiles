@@ -61,6 +61,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 Bundle 'tommcdo/vim-exchange'
+Bundle 'jpalardy/vim-slime'
 
 " ---------------------------------------------------------------
 " SETTINGS
@@ -311,6 +312,9 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " Markdown.vim --------------------------------------------------
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'scss', 'xml', 'php', 'python', 'sh']
+
+" vim-slime -----------------------------------------------------
+let g:slime_target = "tmux"
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS & FUNCTIONS
