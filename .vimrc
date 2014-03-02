@@ -62,6 +62,7 @@ Bundle 'vimoutliner/vimoutliner'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 Bundle 'tommcdo/vim-exchange'
 Bundle 'jpalardy/vim-slime'
+Bundle 'tpope/vim-vinegar'
 
 " ---------------------------------------------------------------
 " SETTINGS
