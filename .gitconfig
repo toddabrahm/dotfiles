@@ -53,3 +53,5 @@
 	user = toddabrahm
 [init]
 	templatedir = ~/.git_template
+[push]
+	default = simple
