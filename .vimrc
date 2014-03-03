@@ -163,6 +163,7 @@ nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 nmap <F5> :redraw!<CR>
 call togglebg#map("<F6>")
+map <leader>ch :set cursorcolumn!<Bar>set cursorline!<CR>
 
 " ---------------------------------------------------------------
 " STYLES
