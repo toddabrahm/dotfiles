@@ -143,6 +143,7 @@ set wildignore+=node_modules
 " ---------------------------------------------------------------
 
 let mapleader=","
+let maplocalleader = "\\"
 map <leader>h <C-w>h
 map <leader>l <C-w>l
 map <leader>j <C-w>j
