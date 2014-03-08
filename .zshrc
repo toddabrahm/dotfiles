@@ -60,20 +60,6 @@ alias chrome="open -a Google\ Chrome"
 alias brewer="brew update && brew upgrade && brew cleanup && brew doctor"
 alias vimupdate="vim +BundleInstall! +qall"
 
-# IP addresses
-alias ip='IP=`dig +short myip.opendns.com @resolver1.opendns.com`; growlnotify -s -a terminal -t "IP Address" -m "${IP}"'
-alias lip='IP=`ipconfig getifaddr en0`; growlnotify -s -a terminal -t "Local IP" -m "${IP}"'
-
-# Flush DNS cache
-alias flushdns="dscacheutil -flushcache"
-
-# Remove Duplicates from Open With Menu
-alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
-
-# Empty the Trash on all mounted volumes and the main HDD
-# Also, clear Apple’s System Logs to improve shell startup speed
-alias emptylogs="sudo rm -rfv /private/var/log/asl/*.asl"
-
 # FASD
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
@@ -84,6 +70,16 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # quick opening files with vim
+
+# OS X-only
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias c='pbcopy'
+  alias p='pbpaste'
+  alias rm='trash'
+  alias flushdns="dscacheutil -flushcache"
+  alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+  alias emptylogs="sudo rm -rfv /private/var/log/asl/*.asl"
+fi
 
 # ----------------------------------------------------------------
 # FUNCTIONS
