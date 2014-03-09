@@ -85,6 +85,11 @@ fi
 # FUNCTIONS
 # ----------------------------------------------------------------
 
+# new named tmux session here with pwd as default-path
+tmx () {
+    tmux new -s $1 -c $PWD
+}
+
 # collapsed pwd relative to $HOME
 pwdr () {
     echo $(pwd | sed -e "s,^$HOME,~,")
