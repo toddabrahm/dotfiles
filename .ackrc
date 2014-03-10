@@ -1,3 +1,6 @@
+--color
+--pager="less -R"
+
 # Handle .md files
 --type-set=md=.md
 --type-add=md=.mkd
