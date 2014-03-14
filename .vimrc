@@ -205,6 +205,7 @@ endif
 if has("gui_running")
     set guifont=Inconsolata-dz\ for\ Powerline:h18
 endif
+hi! link SignColumn LineNr
 
 " ---------------------------------------------------------------
 " PLUGINS
