@@ -64,6 +64,13 @@ Bundle 'tommcdo/vim-exchange'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-vinegar'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kana/vim-textobj-function'
+Bundle 'kana/vim-textobj-fold'
+Bundle 'kana/vim-textobj-indent'
+Bundle 'lucapette/vim-textobj-underscore'
+Bundle 'thinca/vim-textobj-function-javascript'
 
 " ---------------------------------------------------------------
 " SETTINGS
