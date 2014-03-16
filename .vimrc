@@ -180,8 +180,8 @@ map <leader>ch :set cursorcolumn!<Bar>set cursorline!<CR>
 
 set t_Co=256
 set term=screen-256color
-if $ITERM_PROFILE == "Solarized Dark"
-    set background=dark
+if $ITERM_PROFILE == "Solarized Light"
+    set background=light
     colorscheme solarized
     let g:airline_theme='solarized'
 elseif $ITERM_PROFILE == "Github"
@@ -205,7 +205,7 @@ elseif $ITERM_PROFILE == "Base16 Greenscreen Dark"
     colorscheme base16-greenscreen
     let g:airline_theme='base16'
 else
-    set background=light
+    set background=dark
     colorscheme solarized
     let g:airline_theme='solarized'
 endif
