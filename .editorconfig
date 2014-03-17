@@ -17,3 +17,6 @@ indent_size = 4
 [*.{html,css,scss,jade,haml,rb,md}]
 indent_style = space
 indent_size = 2
+
+[*.otl]
+indent_style = tab
