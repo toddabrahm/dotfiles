@@ -342,10 +342,6 @@ au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
 " vim-node (dict)
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
-" Save & load view automatically to save folds
-autocmd BufWinLeave *.* mkview!
-autocmd BufWinEnter *.* silent loadview
-
 " Turn spelling on when entering a text/markdown buffer
 autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
 
