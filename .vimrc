@@ -349,20 +349,9 @@ autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spellla
 autocmd FileType scss set commentstring=//\ %s
 
 "Show highlighting groups for current word
-nmap <c-s-k> :call <sid>synstack()<cr>
-function! <sid>synstack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synidattr(v:val, "name")')
-endfunc
-
-"Change fold styling in VimOutliner files
-au BufRead,BufWinEnter,BufNewFile *.otl call OutlineStyle()
-function! OutlineStyle()
-    hi Folded guibg=NONE ctermbg=NONE guifg=NONE ctermfg=NONE cterm=NONE
-    hi LineNr guibg=NONE ctermbg=NONE
-endfunc
+ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Highlight Word https://github.com/sjl/dotfiles/blob/master/vim/vimrc
 
