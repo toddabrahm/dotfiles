@@ -56,6 +56,10 @@ alias lat="ls -Goath"  # Multi-line, hiddens, last modified, no group, file-size
 alias catn="cat -n"    # Concat with line numbers
 alias chrome="open -a Google\ Chrome"
 
+# Global aliases
+alias -g L="|less"
+alias -g G="|grep"
+
 # Packages
 alias brewer="brew update && brew upgrade && brew cleanup && brew doctor"
 alias vimupdate="vim +BundleInstall! +qall"
