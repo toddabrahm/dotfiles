@@ -103,7 +103,7 @@ set scrolloff=5
 set showmode
 set splitbelow
 
-" Tabs
+" Indenting
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -114,9 +114,7 @@ set smartindent
 " Line wrapping
 set wrap
 set linebreak
-set nolist
 set textwidth=80
-set timeoutlen=300
 
 " Folding
 set foldmethod=manual
@@ -134,12 +132,14 @@ set smartcase
 set hlsearch
 
 " Misc options
+set nolist
+set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
+set timeoutlen=300
 set formatoptions=qrn1
 set wildmenu
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set cpoptions+=$
 set backspace=indent,eol,start
-set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
 set spelllang=en_us
 set lazyredraw
 
@@ -173,7 +173,9 @@ nnoremap Vaa ggVG
 nmap <F5> :redraw!<CR>
 call togglebg#map("<F6>")
 map <leader>ch :set cursorcolumn!<Bar>set cursorline!<CR>
-nmap <silent> K <Plug>DashSearch 
+nmap <silent> K <Plug>DashSearch
+nnoremap <c-]> <c-]>mzzvzz15<c-e>`z:Pulse<cr>
+nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " ---------------------------------------------------------------
 " STYLES
@@ -213,7 +215,8 @@ endif
 if has("gui_running")
     set guifont=Inconsolata-dz\ for\ Powerline:h18
 endif
-hi! link SignColumn LineNr
+" hi! link SignColumn LineNr
+hi SignColumn ctermbg=NONE
 
 " ---------------------------------------------------------------
 " PLUGINS
@@ -255,8 +258,8 @@ nmap <leader>fr :%! ~/bin/formd -r<CR>
 nmap <leader>fi :%! ~/bin/formd -i<CR>
 
 " Tagbar ------------------------------------------------------
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
-let g:tagbar_width=26                          " Default is 40, seems too wide
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_width=26
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
 
 " Gist.vim ----------------------------------------------------
@@ -278,8 +281,7 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ 'vimshell' : $HOME.'/.vimshell_hist'
     \ }
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
@@ -380,7 +382,3 @@ hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#859900 ctermbg=64
 hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#d33682 ctermbg=125
 hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#6c71c4 ctermbg=61
 hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#268bd2 ctermbg=33
-
-" Jumping to tags.
-nnoremap <c-]> <c-]>mzzvzz15<c-e>`z:Pulse<cr>
-nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z:Pulse<cr>
