@@ -174,8 +174,6 @@ nmap <F5> :redraw!<CR>
 call togglebg#map("<F6>")
 map <leader>ch :set cursorcolumn!<Bar>set cursorline!<CR>
 nmap <silent> K <Plug>DashSearch
-nnoremap <c-]> <c-]>mzzvzz15<c-e>`z:Pulse<cr>
-nnoremap <c-\> <c-w>v<c-]>mzzMzvzz15<c-e>`z:Pulse<cr>
 
 " ---------------------------------------------------------------
 " STYLES
