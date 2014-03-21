@@ -95,7 +95,7 @@ set clipboard=unnamed
 set showmatch
 set showcmd
 set ruler
-set number
+set number relativenumber
 set guioptions=agi
 set mousehide
 set laststatus=2
@@ -174,6 +174,7 @@ nmap <F5> :redraw!<CR>
 call togglebg#map("<F6>")
 map <leader>ch :set cursorcolumn!<Bar>set cursorline!<CR>
 nmap <silent> K <Plug>DashSearch
+nmap <leader>rn :set relativenumber!<CR>
 
 " ---------------------------------------------------------------
 " STYLES
