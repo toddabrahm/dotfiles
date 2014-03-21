@@ -265,8 +265,10 @@ let g:gist_show_privates = 1
 let g:gist_clip_command = 'pbcopy'
 
 " delimitMate -------------------------------------------------
-let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
+let delimitMate_matchpairs = "(:),[:],{:}"
+let delimitMate_balance_matchpairs = 1
 
 " neocomplete -------------------------------------------------
 let g:acp_enableAtStartup = 0
