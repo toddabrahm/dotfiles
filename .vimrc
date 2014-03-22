@@ -156,11 +156,9 @@ map <leader>l <C-w>l
 map <leader>j <C-w>j
 map <leader>k <C-w>k
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
-nmap <leader>ts :set list!<CR>
 nmap <leader>ev :e $MYVIMRC
 map <leader>jsh :JSHintToggle<CR>
 nnoremap <leader>gu :GundoToggle<CR>
-nnoremap <leader>s :set spell!<CR>
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 nnoremap <leader>zz e:let &scrolloff=999-&scrolloff<CR>
 map <leader>da :bufdo silent! bdelete<CR>
@@ -169,11 +167,7 @@ nnoremap <leader>bk m'ddggP''
 nnoremap <leader>bj m'ddGp''
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
-nmap <F5> :redraw!<CR>
-call togglebg#map("<F6>")
-map <leader>ch :set cursorcolumn!<Bar>set cursorline!<CR>
 nmap <silent> K <Plug>DashSearch
-nmap <leader>rn :set relativenumber!<CR>
 
 " ---------------------------------------------------------------
 " STYLES
