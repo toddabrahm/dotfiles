@@ -141,7 +141,6 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set cpoptions+=$
 set backspace=indent,eol,start
 set spelllang=en_us
-set lazyredraw
 
 " Ignore
 set wildignore+=node_modules
