@@ -155,6 +155,10 @@ map <leader>h <C-w>h
 map <leader>l <C-w>l
 map <leader>j <C-w>j
 map <leader>k <C-w>k
+map <up> <C-w>+
+map <down> <C-w>-
+map <left> <C-w><
+map <right> <C-w>>
 noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 nmap <leader>ev :e $MYVIMRC
 map <leader>jsh :JSHintToggle<CR>
