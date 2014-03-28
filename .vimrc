@@ -140,10 +140,14 @@ set wildmenu
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set cpoptions+=$
 set backspace=indent,eol,start
-set spelllang=en_us
 
 " Ignore
 set wildignore+=node_modules
+
+set spelllang=en_us
+set dictionary+=/usr/share/dict/words
+set spellfile=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
+nnoremap zG 2zg
 
 " ---------------------------------------------------------------
 " MAPPINGS
@@ -211,7 +215,6 @@ endif
 if has("gui_running")
     set guifont=Inconsolata-dz\ for\ Powerline:h18
 endif
-" hi! link SignColumn LineNr
 hi SignColumn ctermbg=NONE
 
 " ---------------------------------------------------------------
@@ -338,7 +341,7 @@ au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 " Turn spelling on when entering a text/markdown buffer
-autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell
 
 " Filetype comment strings
 autocmd FileType scss set commentstring=//\ %s
