@@ -144,9 +144,10 @@ set backspace=indent,eol,start
 " Ignore
 set wildignore+=node_modules
 
-set spelllang=en_us
+" Spelling
 set dictionary+=/usr/share/dict/words
-set spellfile=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
+set spellfile+=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
+set spelllang=en_us
 nnoremap zG 2zg
 
 " ---------------------------------------------------------------
@@ -309,7 +310,6 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#force_overwrite_completefunc = 1
 
 " Neosnippet --------------------------------------------------
-
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
@@ -341,7 +341,7 @@ au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 " Turn spelling on when entering a text/markdown buffer
-autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell
+autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
 
 " Filetype comment strings
 autocmd FileType scss set commentstring=//\ %s
