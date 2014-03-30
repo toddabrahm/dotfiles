@@ -146,7 +146,7 @@ set wildignore+=node_modules
 
 " Spelling
 set dictionary+=/usr/share/dict/words
-set spellfile+=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
+set spellfile=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
 set spelllang=en_us
 nnoremap zG 2zg
 
