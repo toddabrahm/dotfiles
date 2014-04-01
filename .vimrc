@@ -20,7 +20,6 @@ Bundle 'Shougo/neosnippet.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'rking/ag.vim'
 Bundle 'majutsushi/tagbar'
-" Bundle 'spf13/PIV'
 Bundle 'zef/vim-cycle'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-repeat'
@@ -118,7 +117,6 @@ set textwidth=80
 
 " Folding
 set foldmethod=manual
-let g:DisableAutoPHPFolding = 1
 
 " No bells
 set noerrorbells
@@ -287,17 +285,17 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -310,9 +308,9 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#force_overwrite_completefunc = 1
 
 " Neosnippet --------------------------------------------------
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
@@ -334,7 +332,7 @@ let g:slime_target = "tmux"
 " ---------------------------------------------------------------
 
 " Reset .scss files to only the scss filetype
-au BufRead,BufWinEnter,BufNewFile *.scss	set filetype=scss
+au BufRead,BufWinEnter,BufNewFile *.scss set filetype=scss
 
 " Textwidth for text file types
 au FileType text,gitcommit,markdown setlocal tw=66
@@ -349,13 +347,12 @@ autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spellla
 " Filetype comment strings
 autocmd FileType scss set commentstring=//\ %s
 
-"Show highlighting groups for current word
+" Show highlighting groups for current word
  map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " Highlight Word https://github.com/sjl/dotfiles/blob/master/vim/vimrc
-
 function! HiInterestingWord(n) "
     normal! mz
     normal! "zyiw
