@@ -134,18 +134,18 @@ set nolist
 set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
 set timeoutlen=300
 set formatoptions=qrn1
-set wildmenu
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set cpoptions+=$
 set backspace=indent,eol,start
 
-" Ignore
+" Wildmenu
+set wildmenu
 set wildignore+=node_modules
 
 " Spelling
-set dictionary+=/usr/share/dict/words
-set spellfile=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
+set dictionary=/usr/share/dict/words
 set spelllang=en_us
+set spellfile=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
 nnoremap zG 2zg
 
 " ---------------------------------------------------------------
@@ -370,9 +370,9 @@ nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
 
-hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#b58900 ctermbg=136
-hi def InterestingWord2 guifg=#000000 ctermfg=16 guibg=#cb4b16 ctermbg=166
-hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#859900 ctermbg=64
-hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#d33682 ctermbg=125
-hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#6c71c4 ctermbg=61
-hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#268bd2 ctermbg=33
+hi def InterestingWord1 guifg=#fdf6e3 ctermfg=15 guibg=#cb4b16 ctermbg=9
+hi def InterestingWord2 guifg=#fdf6e3 ctermfg=15 guibg=#859900 ctermbg=2
+hi def InterestingWord3 guifg=#fdf6e3 ctermfg=15 guibg=#2aa198 ctermbg=6
+hi def InterestingWord4 guifg=#fdf6e3 ctermfg=15 guibg=#268bd2 ctermbg=4
+hi def InterestingWord5 guifg=#fdf6e3 ctermfg=15 guibg=#d33682 ctermbg=5
+hi def InterestingWord6 guifg=#fdf6e3 ctermfg=15 guibg=#6c71c4 ctermbg=13
