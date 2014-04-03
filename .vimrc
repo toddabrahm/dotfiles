@@ -235,8 +235,11 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Ctrl-P ------------------------------------------------------
 let g:ctrlp_cmd = 'CtrlP'
-nmap <leader>be :CtrlPBuffer<CR>
-nmap <leader>mru :CtrlPMRU<CR>
+nmap <leader>be :echo "use new mapping"<CR>
+nmap <leader>mru :echo "use new mapping"<CR>
+nnoremap <C-p>m :CtrlPMRU<CR>
+nnoremap <C-p>b :CtrlPBuffer<CR>
+nnoremap <C-p>t :CtrlPTag<CR>
 let g:ctrlp_open_multiple_files = 'i'
 let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
 func! MyCtrlPMappings()
