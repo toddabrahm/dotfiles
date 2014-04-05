@@ -70,6 +70,7 @@ Bundle 'kana/vim-textobj-fold'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'lucapette/vim-textobj-underscore'
 Bundle 'thinca/vim-textobj-function-javascript'
+Bundle 'sheerun/vim-polyglot'
 
 " ---------------------------------------------------------------
 " SETTINGS
