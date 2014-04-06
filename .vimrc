@@ -20,7 +20,6 @@ Bundle 'Shougo/neosnippet.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'rking/ag.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'zef/vim-cycle'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-tbone'
@@ -71,6 +70,7 @@ Bundle 'kana/vim-textobj-indent'
 Bundle 'lucapette/vim-textobj-underscore'
 Bundle 'thinca/vim-textobj-function-javascript'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'AndrewRadev/switch.vim'
 
 " ---------------------------------------------------------------
 " SETTINGS
@@ -330,6 +330,9 @@ let g:markdown_fold_style = 'nested'
 
 " vim-slime -----------------------------------------------------
 let g:slime_target = "tmux"
+
+" Switch.vim ----------------------------------------------------
+nnoremap <leader>sw :Switch<CR>
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS & FUNCTIONS
