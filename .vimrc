@@ -349,10 +349,10 @@ au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 
 " Turn spelling on when entering a text/markdown buffer
-autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
+au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
 
 " Filetype comment strings
-autocmd FileType scss set commentstring=//\ %s
+au FileType scss set commentstring=//\ %s
 
 " Show highlighting groups for current word
  map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
