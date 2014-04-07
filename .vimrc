@@ -118,6 +118,7 @@ set textwidth=80
 
 " Folding
 set foldmethod=manual
+set foldlevelstart=99
 
 " No bells
 set noerrorbells
@@ -344,6 +345,9 @@ au BufRead,BufWinEnter,BufNewFile *.scss set filetype=scss
 " Textwidth for text file types
 au FileType text,gitcommit,markdown setlocal tw=66
 au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
+
+" Open VimOutliner files mostly collapsed
+au BufRead *.otl set foldlevel=1
 
 " vim-node (dict)
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
