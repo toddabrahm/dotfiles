@@ -107,6 +107,11 @@ catp () {
     pygmentize -O style=solarized -f console256 -g "$1"
 }
 
+# Output single line
+line () {
+    sed -n $1p $2
+}
+
 # mkdir && cd ex. mkc foo/bar/baz
 mkc () {
     mkdir -p "$@" && cd "$@"
