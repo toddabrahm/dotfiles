@@ -138,6 +138,11 @@ b64() {
     cat $1 | openssl enc -base64 | tr -d '\n' | pbcopy
 }
 
+# fetch ip info
+geoip () {
+    curl -s http://freegeoip.net/json/$1 | jq '.'
+}
+
 # URL encode and echo
 function url-encode () {
         setopt extendedglob
