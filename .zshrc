@@ -1,6 +1,7 @@
 # ----------------------------------------------------------------
-# SETTINGS & ENV
+# GENERAL
 # ----------------------------------------------------------------
+
 stty -ixon
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dontblinks"
@@ -23,17 +24,11 @@ export PATH="$HOME/Dropbox/scripts:${PATH}"
 export PATH="$HOME/Dropbox/scripts/tmux:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$HOME/bin:${PATH}"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+PATH=$PATH:$HOME/.rvm/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
-# z is the new j http://is.gd/JoQGaT
 . `brew --prefix`/etc/profile.d/z.sh
-
-# fasd
 eval "$(fasd --init auto)"
-
-# less syntax highlighting
 LESSPIPE=`which src-hilite-lesspipe.sh`
 export LESSOPEN="| ${LESSPIPE} %s"
 export LESS='-R'
@@ -42,7 +37,6 @@ export LESS='-R'
 # ALIASES & BINDINGS
 # ----------------------------------------------------------------
 
-# History completion
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
@@ -89,12 +83,12 @@ fi
 # FUNCTIONS
 # ----------------------------------------------------------------
 
-# new named tmux session here with pwd as default-path
+# New named tmux session here with pwd as default-path
 tmx () {
     tmux new -s $1 -c $PWD
 }
 
-# collapsed pwd relative to $HOME
+# Collapsed pwd relative to $HOME
 pwdr () {
     echo $(pwd | sed -e "s,^$HOME,~,")
 }
@@ -112,17 +106,17 @@ line () {
     sed -n $1p $2
 }
 
-# mkdir && cd ex. mkc foo/bar/baz
+# Make directory including parents and cd to it
 mkc () {
     mkdir -p "$@" && cd "$@"
 }
 
-# inspect beg/end of file http://is.gd/vtliFU
+# Inspect beg/end of file http://is.gd/vtliFU
 i () {
     (head -n 5; tail -n 5) < "$1" | column -t
 }
 
-# make sure file is plain text then copy to clipboard
+# Make sure file is plain text then copy to clipboard
 clip () {
     type=`file "$1"|grep -c text`
     if [ $type -gt 0 ]; then
@@ -133,32 +127,23 @@ clip () {
     fi
 }
 
-# copy input file to clipboard as base64
-b64() {
+# Copy input file to clipboard as base64
+b64 () {
     cat $1 | openssl enc -base64 | tr -d '\n' | pbcopy
 }
 
-# fetch ip info
+# Fetch ip info
 geoip () {
     curl -s http://freegeoip.net/json/$1 | jq '.'
 }
 
 # URL encode and echo
-function url-encode () {
+url-encode () {
         setopt extendedglob
         echo "${${(j: :)@}//(#b)(?)/%$[[##16]##${match[1]}]}"
 }
 
-# search google
-function google () {
+# Search google
+google () {
        chrome "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
 }
-
-# ----------------------------------------------------------------
-# Misc
-# ----------------------------------------------------------------
-
-# Tetris for productivity purposes
-autoload -U tetris
-zle -N tetris
-bindkey "^T" tetris
