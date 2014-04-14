@@ -43,6 +43,8 @@
     rbc = rebase --continue
     re = reset
     tg = tag
+    branches = branch -a
+    remotes = remote -v
     showless = "!sh -c 'git show --color=always $1 | less -R' -"
     deploy = !git subtree push --prefix dist origin master
     dammit = !git reset --soft HEAD^
