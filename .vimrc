@@ -71,6 +71,7 @@ Bundle 'lucapette/vim-textobj-underscore'
 Bundle 'thinca/vim-textobj-function-javascript'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'AndrewRadev/switch.vim'
+Bundle 'wellle/tmux-complete.vim'
 
 " ---------------------------------------------------------------
 " SETTINGS
@@ -334,6 +335,9 @@ let g:slime_target = "tmux"
 
 " Switch.vim ----------------------------------------------------
 nnoremap <leader>sw :Switch<CR>
+
+" tmux-complete.vim ---------------------------------------------
+let g:tmuxcomplete#trigger = ''
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS & FUNCTIONS
