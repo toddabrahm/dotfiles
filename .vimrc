@@ -72,6 +72,7 @@ Bundle 'thinca/vim-textobj-function-javascript'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'AndrewRadev/switch.vim'
 Bundle 'wellle/tmux-complete.vim'
+Bundle 'shawncplus/phpcomplete.vim'
 
 " ---------------------------------------------------------------
 " SETTINGS
