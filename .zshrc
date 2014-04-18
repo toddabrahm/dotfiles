@@ -20,8 +20,6 @@ export HISTFILESIZE=100000
 export HISTCONTROL=erasedups
 export GREP_OPTIONS='--color=auto'
 export PATH="/usr/local/share/npm/bin:${PATH}"
-export PATH="$HOME/Dropbox/scripts:${PATH}"
-export PATH="$HOME/Dropbox/scripts/tmux:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$HOME/bin:${PATH}"
 PATH=$PATH:$HOME/.rvm/bin
