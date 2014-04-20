@@ -47,6 +47,7 @@ alias lt="ls -Goth"    # Multi-line, no hiddens, last modified, no group, file-s
 alias lat="ls -Goath"  # Multi-line, hiddens, last modified, no group, file-size
 alias catn="cat -n"    # Concat with line numbers
 alias chrome="open -a Google\ Chrome"
+alias cdg='cd $(git rev-parse --show-toplevel)'
 
 # Global aliases
 alias -g L="|less"
