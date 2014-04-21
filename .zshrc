@@ -32,14 +32,17 @@ export LESSOPEN="| ${LESSPIPE} %s"
 export LESS='-R'
 
 # ----------------------------------------------------------------
-# ALIASES & BINDINGS
+# BINDINGS
 # ----------------------------------------------------------------
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-alias sudo="sudo "
+# ----------------------------------------------------------------
+# ALIASES
+# ----------------------------------------------------------------
 
+# General
 alias l="ls -1"        # One line, no hiddens
 alias ll="ls -hola"    # Multi-line, hiddens, no group, file-size
 alias la="ls -a"       # One line, hiddens
@@ -48,14 +51,6 @@ alias lat="ls -Goath"  # Multi-line, hiddens, last modified, no group, file-size
 alias catn="cat -n"    # Concat with line numbers
 alias chrome="open -a Google\ Chrome"
 alias cdg='cd $(git rev-parse --show-toplevel)'
-
-# Global aliases
-alias -g L="|less"
-alias -g G="|grep"
-
-# Packages
-alias brewer="brew update && brew upgrade && brew cleanup && brew doctor"
-alias vimupdate="vim +BundleInstall! +qall"
 
 # FASD
 alias a='fasd -a'        # any
@@ -67,6 +62,14 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # quick opening files with vim
+
+# Global
+alias -g L="|less"
+alias -g G="|grep"
+
+# Packages
+alias brewer="brew update && brew upgrade && brew cleanup && brew doctor"
+alias vimupdate="vim +BundleInstall! +qall"
 
 # OS X-only
 if [[ "$OSTYPE" == darwin* ]]; then
