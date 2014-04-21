@@ -37,6 +37,7 @@ export LESS='-R'
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+bindkey -M vicmd v edit-command-line
 
 # ----------------------------------------------------------------
 # ALIASES
