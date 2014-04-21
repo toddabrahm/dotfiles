@@ -49,7 +49,6 @@ alias la="ls -a"       # One line, hiddens
 alias lt="ls -Goth"    # Multi-line, no hiddens, last modified, no group, file-size
 alias lat="ls -Goath"  # Multi-line, hiddens, last modified, no group, file-size
 alias catn="cat -n"    # Concat with line numbers
-alias chrome="open -a Google\ Chrome"
 alias cdg='cd $(git rev-parse --show-toplevel)'
 
 # FASD
@@ -62,6 +61,12 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # quick opening files with vim
+
+# Apps
+alias chrome="open -a Google\ Chrome"
+alias firefox="open -a Firefox"
+alias safari="open -a Safari"
+alias opera="open -a Opera"
 
 # Global
 alias -g L="|less"
@@ -148,4 +153,12 @@ url-encode () {
 # Search google
 google () {
        chrome "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
+}
+
+# open url in all orowsers
+browsers () {
+    safari $1
+    firefox $1
+    opera $1
+    chrome $1
 }
