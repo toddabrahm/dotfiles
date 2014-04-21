@@ -64,6 +64,7 @@ alias v='f -e vim'       # quick opening files with vim
 
 # Apps
 alias chrome="open -a Google\ Chrome"
+alias canary="open -a Google\ Chrome\ Canary"
 alias firefox="open -a Firefox"
 alias safari="open -a Safari"
 alias opera="open -a Opera"
