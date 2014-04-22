@@ -74,6 +74,7 @@ Bundle 'AndrewRadev/switch.vim'
 Bundle 'wellle/tmux-complete.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'StanAngeloff/php.vim'
+Bundle 'henrik/vim-reveal-in-finder'
 
 " ---------------------------------------------------------------
 " SETTINGS
