@@ -94,6 +94,7 @@ set autoread
 set autowrite
 set nrformats=
 set clipboard=unnamed
+set history=200
 
 " Gui options
 set showmatch
