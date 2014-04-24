@@ -161,27 +161,27 @@ nnoremap zG 2zg
 
 let mapleader=","
 let maplocalleader = "\\"
-map <leader>h <C-w>h
-map <leader>l <C-w>l
-map <leader>j <C-w>j
-map <leader>k <C-w>k
-map <up> <C-w>+
-map <down> <C-w>-
-map <left> <C-w><
-map <right> <C-w>>
-noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
-nmap <leader>ev :e $MYVIMRC
-map <leader>jsh :JSHintToggle<CR>
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <up> <C-w>+
+nnoremap <down> <C-w>-
+nnoremap <left> <C-w><
+nnoremap <right> <C-w>>
+nnoremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
+nnoremap <leader>ev :e $MYVIMRC
+nnoremap <leader>jsh :JSHintToggle<CR>
 nnoremap <leader>gu :GundoToggle<CR>
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 nnoremap <leader>zz e:let &scrolloff=999-&scrolloff<CR>
-map <leader>da :bufdo silent! bdelete<CR>
+nnoremap <leader>da :bufdo silent! bdelete<CR>
 nnoremap <leader>tm :SignatureToggle<CR>
 nnoremap <leader>bk m'ddggP''
 nnoremap <leader>bj m'ddGp''
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
-nmap <silent> K <Plug>DashSearch
+nnoremap <silent> K <Plug>DashSearch
 
 " ---------------------------------------------------------------
 " STYLES
@@ -242,8 +242,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Ctrl-P ------------------------------------------------------
 let g:ctrlp_cmd = 'CtrlP'
-nmap <leader>be :echo "use new mapping"<CR>
-nmap <leader>mru :echo "use new mapping"<CR>
 nnoremap <C-p>m :CtrlPMRU<CR>
 nnoremap <C-p>b :CtrlPBuffer<CR>
 nnoremap <C-p>t :CtrlPTag<CR>
@@ -262,8 +260,8 @@ let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
 
 " Formd -------------------------------------------------------
-nmap <leader>fr :%! ~/bin/formd -r<CR>
-nmap <leader>fi :%! ~/bin/formd -i<CR>
+nnoremap <leader>fr :%! ~/bin/formd -r<CR>
+nnoremap <leader>fi :%! ~/bin/formd -i<CR>
 
 " Tagbar ------------------------------------------------------
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
@@ -367,7 +365,7 @@ au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en
 au FileType scss set commentstring=//\ %s
 
 " Show highlighting groups for current word
- map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
