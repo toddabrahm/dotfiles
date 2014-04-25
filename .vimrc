@@ -236,9 +236,6 @@ let g:airline_fugitive_prefix = ''
 let g:airline_readonly_symbol = '⭤'
 let g:airline_linecolumn_prefix = ''
 
-" Fugitive git ------------------------------------------------
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " Ctrl-P ------------------------------------------------------
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap <C-p>m :CtrlPMRU<CR>
