@@ -169,13 +169,15 @@ nnoremap <down> <C-w>-
 nnoremap <left> <C-w><
 nnoremap <right> <C-w>>
 nnoremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
-nnoremap <leader>ev :e $MYVIMRC
-nnoremap <leader>jsh :JSHintToggle<CR>
-nnoremap <leader>gu :GundoToggle<CR>
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
+nnoremap <leader>jsh :JSHintToggle<cr>
+nnoremap <leader>gu :GundoToggle<cr>
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-nnoremap <leader>zz e:let &scrolloff=999-&scrolloff<CR>
-nnoremap <leader>da :bufdo silent! bdelete<CR>
-nnoremap <leader>tm :SignatureToggle<CR>
+nnoremap <leader>zz e:let &scrolloff=999-&scrolloff<cr>
+nnoremap <leader>da :bufdo silent! bdelete<cr>
+nnoremap <leader>tm :SignatureToggle<cr>
+nnoremap <leader>sw :Switch<cr>
 nnoremap <leader>bk m'ddggP''
 nnoremap <leader>bj m'ddGp''
 nnoremap vaa ggvGg_
@@ -238,9 +240,9 @@ let g:airline_linecolumn_prefix = ''
 
 " Ctrl-P ------------------------------------------------------
 let g:ctrlp_cmd = 'CtrlP'
-nnoremap <C-p>m :CtrlPMRU<CR>
-nnoremap <C-p>b :CtrlPBuffer<CR>
-nnoremap <C-p>t :CtrlPTag<CR>
+nnoremap <C-p>m :CtrlPMRU<cr>
+nnoremap <C-p>b :CtrlPBuffer<cr>
+nnoremap <C-p>t :CtrlPTag<cr>
 let g:ctrlp_open_multiple_files = 'i'
 let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
 func! MyCtrlPMappings()
@@ -256,13 +258,13 @@ let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
 
 " Formd -------------------------------------------------------
-nnoremap <leader>fr :%! ~/bin/formd -r<CR>
-nnoremap <leader>fi :%! ~/bin/formd -i<CR>
+nnoremap <leader>fr :%! ~/bin/formd -r<cr>
+nnoremap <leader>fi :%! ~/bin/formd -i<cr>
 
 " Tagbar ------------------------------------------------------
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:tagbar_width=26
-nnoremap <silent> <leader>tb :TagbarToggle<CR>
+nnoremap <silent> <leader>tb :TagbarToggle<cr>
 
 " Gist.vim ----------------------------------------------------
 let g:gist_post_private = 1
@@ -291,9 +293,9 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+inoremap <silent> <cr> <C-r>=<SID>my_cr_function()<cr>
 function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
+  return neocomplete#close_popup() . "\<cr>"
 endfunction
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
@@ -331,9 +333,6 @@ let g:markdown_fold_style = 'nested'
 " vim-slime -----------------------------------------------------
 let g:slime_target = "tmux"
 
-" Switch.vim ----------------------------------------------------
-nnoremap <leader>sw :Switch<CR>
-
 " tmux-complete.vim ---------------------------------------------
 let g:tmuxcomplete#trigger = ''
 
@@ -363,7 +362,7 @@ au FileType scss set commentstring=//\ %s
 " Show highlighting groups for current word
 nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 " Highlight Word https://github.com/sjl/dotfiles/blob/master/vim/vimrc
 function! HiInterestingWord(n) "
