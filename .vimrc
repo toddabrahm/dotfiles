@@ -183,6 +183,7 @@ nnoremap <leader>bj m'ddGp''
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 nnoremap <silent> K <Plug>DashSearch
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " ---------------------------------------------------------------
 " STYLES
