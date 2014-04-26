@@ -141,6 +141,15 @@ b64 () {
     cat $1 | openssl enc -base64 | tr -d '\n' | pbcopy
 }
 
+# Create a data URL from a file
+dataurl () {
+        local mimeType=$(file -b --mime-type "$1")
+        if [[ $mimeType == text/* ]]; then
+                mimeType="${mimeType};charset=utf-8"
+        fi
+        echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')" | pbcopy
+}
+
 # Fetch ip info
 geoip () {
     curl -s http://freegeoip.net/json/$1 | jq '.'
