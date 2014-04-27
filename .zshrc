@@ -92,6 +92,11 @@ fi
 # FUNCTIONS
 # ----------------------------------------------------------------
 
+# find shorthand (also suppressing errors)
+fnd (){
+    find . -name "$1" 2>/dev/null
+}
+
 # New named tmux session here with pwd as default-path
 tmx () {
     tmux new -s $1 -c $PWD
