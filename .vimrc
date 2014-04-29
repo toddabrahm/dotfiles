@@ -169,7 +169,7 @@ nnoremap <down> <C-w>-
 nnoremap <left> <C-w><
 nnoremap <right> <C-w>>
 nnoremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
-nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>ev :e ~/Dropbox/dotfiles/.vimrc<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 nnoremap <leader>jsh :JSHintToggle<cr>
 nnoremap <leader>gu :GundoToggle<cr>
