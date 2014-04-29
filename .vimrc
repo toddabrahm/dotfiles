@@ -343,14 +343,14 @@ let g:tmuxcomplete#trigger = ''
 " ---------------------------------------------------------------
 
 " Reset .scss files to only the scss filetype
-au BufRead,BufWinEnter,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.scss set filetype=scss
 
 " Textwidth for text file types
 au FileType text,gitcommit,markdown setlocal tw=66
 au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
 
 " Open VimOutliner files mostly collapsed
-au BufRead *.otl set foldlevel=1
+au BufRead,BufNewFile *.otl set foldlevel=1
 
 " vim-node (dict)
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
