@@ -12,6 +12,7 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+source ~/bin/tmuxinator.zsh
 unsetopt correct_all
 export TERM=xterm-256color
 export EDITOR=~/bin/vim
