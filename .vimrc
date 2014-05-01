@@ -285,6 +285,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#force_overwrite_completefunc = 1
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist'
@@ -292,28 +293,31 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <silent> <cr> <C-r>=<SID>my_cr_function()<cr>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<cr>"
 endfunction
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+inoremap <silent> <cr> <C-r>=<SID>my_cr_function()<cr>
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplete#force_overwrite_completefunc = 1
+aug settings_neocomplete
+    au!
+    au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    au FileType python setlocal omnifunc=pythoncomplete#Complete
+    au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+aug END
+
 
 " Neosnippet --------------------------------------------------
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -342,24 +346,28 @@ let g:tmuxcomplete#trigger = ''
 " AUTOCOMMANDS & FUNCTIONS
 " ---------------------------------------------------------------
 
-" Reset .scss files to only the scss filetype
-au BufRead,BufNewFile *.scss set filetype=scss
+aug filetype_scss
+    au!
+    au BufRead,BufNewFile *.scss set filetype=scss
+    au FileType scss set commentstring=//\ %s
+aug END
 
-" Textwidth for text file types
-au FileType text,gitcommit,markdown setlocal tw=66
-au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
+aug filetype_text
+    au!
+    au FileType text,gitcommit,markdown setlocal tw=66
+    au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
+    au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
+aug END
 
-" Open VimOutliner files mostly collapsed
-au BufRead,BufNewFile *.otl set foldlevel=1
+aug filetype_vimoutliner
+    au!
+    au BufRead,BufNewFile *.otl set foldlevel=1
+aug END
 
-" vim-node (dict)
-au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-
-" Turn spelling on when entering a text/markdown buffer
-au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
-
-" Filetype comment strings
-au FileType scss set commentstring=//\ %s
+aug filetype_js
+    au!
+    au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+aug END
 
 " Show highlighting groups for current word
 nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
