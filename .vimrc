@@ -348,7 +348,6 @@ let g:tmuxcomplete#trigger = ''
 
 aug filetype_scss
     au!
-    au BufRead,BufNewFile *.scss set filetype=scss
     au FileType scss set commentstring=//\ %s
 aug END
 
