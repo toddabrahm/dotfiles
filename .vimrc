@@ -185,6 +185,7 @@ nnoremap Vaa ggVG
 nnoremap <silent> K <Plug>DashSearch
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 vnoremap <leader>` <esc>`>o<esc>I```<esc>`<O<esc>I```
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " ---------------------------------------------------------------
 " STYLES
