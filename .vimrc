@@ -59,7 +59,7 @@ Bundle 'xolox/vim-misc'
 Bundle 'vimoutliner/vimoutliner'
 Bundle 'fisadev/vim-ctrlp-cmdpalette'
 Bundle 'tommcdo/vim-exchange'
-Bundle 'jpalardy/vim-slime'
+Bundle 'lord-garbage/tslime.vim'
 Bundle 'tpope/vim-vinegar'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'coderifous/textobj-word-column.vim'
@@ -339,8 +339,10 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 " Markdown Folding
 let g:markdown_fold_style = 'nested'
 
-" vim-slime -----------------------------------------------------
-let g:slime_target = "tmux"
+" tslime.vim ----------------------------------------------------
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuVars
 
 " tmux-complete.vim ---------------------------------------------
 let g:tmuxcomplete#trigger = ''
