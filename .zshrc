@@ -89,6 +89,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   alias emptylogs="sudo rm -rfv /private/var/log/asl/*.asl"
   alias volumemute="osascript -e 'set volume output muted true'"
   alias volumefull="osascript -e 'set volume 10'"
+  alias pgrep='pgrep -fli'
 fi
 
 # ----------------------------------------------------------------
