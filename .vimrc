@@ -203,22 +203,6 @@ elseif $ITERM_PROFILE == "Github"
     set background=light
     colorscheme github
     let g:airline_theme='light'
-elseif $ITERM_PROFILE == "Monokai Soda"
-    set background=dark
-    colorscheme Monokai
-    let g:airline_theme='dark'
-elseif $ITERM_PROFILE == "Jellybeans"
-    set background=dark
-    colorscheme jellybeans
-    let g:airline_theme='jellybeans'
-elseif $ITERM_PROFILE == "Tomorrow Night Eighties"
-    set background=dark
-    colorscheme Tomorrow-Night-Eighties
-    let g:airline_theme='tomorrow'
-elseif $ITERM_PROFILE == "Base16 Greenscreen Dark"
-    set background=dark
-    colorscheme base16-greenscreen
-    let g:airline_theme='base16'
 else
     set background=dark
     colorscheme solarized
