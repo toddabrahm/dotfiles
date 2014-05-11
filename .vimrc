@@ -74,6 +74,7 @@ Bundle 'AndrewRadev/switch.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'henrik/vim-reveal-in-finder'
+Bundle 'nelstrom/vim-qargs'
 
 " ---------------------------------------------------------------
 " SETTINGS
