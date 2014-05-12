@@ -52,6 +52,8 @@ alias lt="ls -Goth"    # Multi-line, no hiddens, last modified, no group, file-s
 alias lat="ls -Goath"  # Multi-line, hiddens, last modified, no group, file-size
 alias catn="cat -n"    # Concat with line numbers
 alias cdg='cd $(git rev-parse --show-toplevel)'
+alias du="du -h -d 2"
+alias df="df -h"
 
 # FASD
 alias a='fasd -a'        # any
