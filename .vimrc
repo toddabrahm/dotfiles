@@ -101,7 +101,7 @@ set history=200
 set showmatch
 set showcmd
 set ruler
-set number relativenumber
+set number
 set guioptions=agi
 set mousehide
 set laststatus=2
