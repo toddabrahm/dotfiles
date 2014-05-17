@@ -74,8 +74,10 @@ alias safari="open -a Safari"
 alias opera="open -a Opera"
 
 # Global
-alias -g L="|less"
-alias -g G="|grep"
+alias -g L="| less"
+alias -g G="| grep"
+alias -g H="| head"
+alias -g T="| tail"
 
 # Packages
 alias brewer="brew update && brew upgrade && brew cleanup && brew doctor"
