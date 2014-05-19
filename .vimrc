@@ -120,7 +120,6 @@ set smartindent
 " Line wrapping
 set wrap
 set linebreak
-set textwidth=80
 
 " Folding
 set foldmethod=manual
@@ -347,9 +346,13 @@ aug END
 
 aug filetype_text
     au!
-    au FileType text,gitcommit,markdown setlocal tw=66
-    au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal tw=66
     au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
+aug END
+
+aug filetype_gitcommit
+    au!
+    au FileType gitcommit setlocal tw=66
+    au FileType gitcommit setlocal spell spelllang=en_us
 aug END
 
 aug filetype_vimoutliner
