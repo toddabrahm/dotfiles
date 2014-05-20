@@ -174,7 +174,8 @@ nnoremap <leader>ev :e ~/Dropbox/dotfiles/.vimrc<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 nnoremap <leader>jsh :JSHintToggle<cr>
 nnoremap <leader>gu :GundoToggle<cr>
-nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>mp :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>mc :write ! marked \| pbcopy<cr>
 nnoremap <leader>zz e:let &scrolloff=999-&scrolloff<cr>
 nnoremap <leader>da :bufdo silent! bdelete<cr>
 nnoremap <leader>tm :SignatureToggle<cr>
