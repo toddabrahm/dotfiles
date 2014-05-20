@@ -82,6 +82,8 @@ alias -g T="| tail"
 # Packages
 alias brewer="brew update && brew upgrade && brew cleanup && brew doctor"
 alias vimupdate="vim +BundleInstall! +qall"
+alias ni="npm install --save-dev"
+alias bo="bower install --save-dev"
 
 # OS X-only
 if [[ "$OSTYPE" == darwin* ]]; then
