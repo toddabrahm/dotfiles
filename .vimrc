@@ -248,10 +248,6 @@ endfunc
 let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
 
-" Formd -------------------------------------------------------
-nnoremap <leader>fr :%! ~/bin/formd -r<cr>
-nnoremap <leader>fi :%! ~/bin/formd -i<cr>
-
 " Tagbar ------------------------------------------------------
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:tagbar_width=26
