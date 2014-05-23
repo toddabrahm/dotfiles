@@ -76,6 +76,7 @@ Bundle 'StanAngeloff/php.vim'
 Bundle 'henrik/vim-reveal-in-finder'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'gcmt/wildfire.vim'
+Bundle 'AndrewRadev/splitjoin.vim'
 
 " ---------------------------------------------------------------
 " SETTINGS
@@ -331,6 +332,10 @@ let g:tmuxcomplete#trigger = ''
 
 " git-gutter ----------------------------------------------------
 let g:gitgutter_realtime = 0
+
+" splitjoin.vim -------------------------------------------------
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS & FUNCTIONS
