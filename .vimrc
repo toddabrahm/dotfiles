@@ -371,28 +371,3 @@ aug END
 nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
-
-" Highlight Word https://github.com/sjl/dotfiles/blob/master/vim/vimrc
-function! HiInterestingWord(n) "
-    normal! mz
-    normal! "zyiw
-    let mid = 86750 + a:n
-    silent! call matchdelete(mid)
-    let pat = '\V\<' . escape(@z, '\') . '\>'
-    call matchadd("InterestingWord" . a:n, pat, 1, mid)
-    normal! `z
-endfunction "
-
-nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
-nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
-nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
-nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
-nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
-nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
-
-hi def InterestingWord1 guifg=#fdf6e3 ctermfg=15 guibg=#cb4b16 ctermbg=9
-hi def InterestingWord2 guifg=#fdf6e3 ctermfg=15 guibg=#859900 ctermbg=2
-hi def InterestingWord3 guifg=#fdf6e3 ctermfg=15 guibg=#2aa198 ctermbg=6
-hi def InterestingWord4 guifg=#fdf6e3 ctermfg=15 guibg=#268bd2 ctermbg=4
-hi def InterestingWord5 guifg=#fdf6e3 ctermfg=15 guibg=#d33682 ctermbg=5
-hi def InterestingWord6 guifg=#fdf6e3 ctermfg=15 guibg=#6c71c4 ctermbg=13
