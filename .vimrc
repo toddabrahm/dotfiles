@@ -162,10 +162,10 @@ nnoremap zG 2zg
 
 let mapleader=","
 let maplocalleader = "\\"
-nnoremap <leader>h <C-w>h
-nnoremap <leader>l <C-w>l
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
+nnoremap <leader>h :echoerr "No! use C-w"<cr>
+nnoremap <leader>l :echoerr "No! use C-w"<cr>
+nnoremap <leader>j :echoerr "No! use C-w"<cr>
+nnoremap <leader>k :echoerr "No! use C-w"<cr>
 nnoremap <up> <C-w>+
 nnoremap <down> <C-w>-
 nnoremap <left> <C-w><
