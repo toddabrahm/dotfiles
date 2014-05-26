@@ -177,7 +177,6 @@ nnoremap <leader>jsh :JSHintToggle<cr>
 nnoremap <leader>gu :GundoToggle<cr>
 nnoremap <leader>mp :silent !open -a Marked.app '%:p'<cr>
 nnoremap <leader>mc :write ! marked \| pbcopy<cr>
-nnoremap <leader>zz e:let &scrolloff=999-&scrolloff<cr>
 nnoremap <leader>da :bufdo silent! bdelete<cr>
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
