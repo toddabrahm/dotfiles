@@ -53,7 +53,8 @@ alias lat="ls -Goath"    # Multi-line, hiddens, last modified, no group, file-si
 alias catn="cat -n"      # Concat with line numbers
 alias du="du -h -d 2"    # Human readable disk usage
 alias df="df -h"         # Human readable free space
-alias cdg='cd $(git rev-parse --show-toplevel)' # cd to Git root
+alias cdg='cd2gitroot'
+alias cdf='cd2finder'
 
 # FASD
 alias a='fasd -a'        # any
@@ -195,6 +196,11 @@ dash () {
 }
 
 # Change working directory to the top-most Finder window location
-cdf () {
+cd2finder () {
     cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
+
+# Change working directory to nearest Git root
+cd2gitroot () {
+    cd $(git rev-parse --show-toplevel)
 }
