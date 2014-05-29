@@ -206,6 +206,8 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " preserve flags when repeating :s
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+" make Y consistent with C & D, yy already yanks entire line
+nnoremap Y y$
 
 " ---------------------------------------------------------------
 " STYLES
