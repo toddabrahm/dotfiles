@@ -109,6 +109,7 @@ set laststatus=2
 set scrolloff=5
 set showmode
 set splitbelow
+set splitright
 
 " Indenting
 set tabstop=4
