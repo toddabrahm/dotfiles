@@ -77,6 +77,7 @@ Bundle 'henrik/vim-reveal-in-finder'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'tpope/vim-eunuch'
 
 " ---------------------------------------------------------------
 " SETTINGS
