@@ -238,6 +238,12 @@ hi SignColumn ctermbg=NONE
 " PLUGINS
 " ---------------------------------------------------------------
 
+" Matchit.vim -------------------------------------------------
+" Load matchit.vim if newer version isn't installed
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
 " Airline -----------------------------------------------------
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_left_sep = ''
