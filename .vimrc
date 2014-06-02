@@ -78,6 +78,7 @@ Bundle 'nelstrom/vim-qargs'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'tpope/vim-eunuch'
+Bundle 'junegunn/goyo.vim'
 
 " ---------------------------------------------------------------
 " SETTINGS
@@ -360,6 +361,10 @@ let g:gitgutter_realtime = 0
 " splitjoin.vim -------------------------------------------------
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
+
+" goyo.vim ------------------------------------------------------
+let g:goyo_width = 70
+nnoremap <leader>w :Goyo<cr>
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS & FUNCTIONS
