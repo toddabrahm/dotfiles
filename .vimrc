@@ -218,14 +218,26 @@ nnoremap Y y$
 
 set t_Co=256
 set term=screen-256color
-if $ITERM_PROFILE == "Solarized Light"
+if $ITERM_PROFILE == 'Solarized Light'
     set background=light
     colorscheme solarized
     let g:airline_theme='solarized'
-elseif $ITERM_PROFILE == "Github"
+elseif $ITERM_PROFILE == "Writing"
     set background=light
-    colorscheme github
-    let g:airline_theme='light'
+    colorscheme base16-grayscale
+    let g:airline_theme='monochrome'
+elseif $ITERM_PROFILE == 'Basic'
+    set background=light
+    colorscheme base16-google
+    let g:airline_theme='understated'
+elseif $ITERM_PROFILE == 'Flat Dark'
+    set background=dark
+    colorscheme base16-flat
+    let g:airline_theme='base16'
+elseif $ITERM_PROFILE == 'Flat Light'
+    set background=light
+    colorscheme base16-flat
+    let g:airline_theme='base16'
 else
     set background=dark
     colorscheme solarized
