@@ -231,9 +231,7 @@ else
     colorscheme solarized
     let g:airline_theme='solarized'
 endif
-if has("gui_running")
-    set guifont=Inconsolata-dz\ for\ Powerline:h18
-endif
+set guifont=Fira\ Mono:h18
 hi SignColumn ctermbg=NONE
 
 " ---------------------------------------------------------------
