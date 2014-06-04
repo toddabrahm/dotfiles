@@ -224,7 +224,7 @@ if $ITERM_PROFILE == 'Solarized Light'
     let g:airline_theme='solarized'
 elseif $ITERM_PROFILE == "Writing"
     set background=light
-    colorscheme base16-grayscale
+    colorscheme writing
     let g:airline_theme='monochrome'
 elseif $ITERM_PROFILE == 'Basic'
     set background=light
