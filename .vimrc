@@ -11,6 +11,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+" Load plugin bundles
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
@@ -165,59 +166,84 @@ nnoremap zG 2zg
 
 let mapleader=","
 let maplocalleader = "\\"
+"
 " migrate window navigation back to default mapping
 nnoremap <leader>h :echoerr "No! use C-w"<cr>
 nnoremap <leader>l :echoerr "No! use C-w"<cr>
 nnoremap <leader>j :echoerr "No! use C-w"<cr>
 nnoremap <leader>k :echoerr "No! use C-w"<cr>
+
 " resize windows with arrows
 nnoremap <up> <C-w>+
 nnoremap <down> <C-w>-
 nnoremap <left> <C-w><
 nnoremap <right> <C-w>>
+
 " toggle plugins
 nnoremap <leader>jsh :JSHintToggle<cr>
 nnoremap <leader>gu :GundoToggle<cr>
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
+
 " edit vimrc
 nnoremap <leader>ev :e ~/Dropbox/dotfiles/.vimrc<cr>
+
 " source vimrc
 nnoremap <leader>sv :so $MYVIMRC<cr>
+
 " clear searches
 nnoremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
+
 " delete buffer
 nnoremap <leader>da :bufdo silent! bdelete<cr>
+
 " preview buffer in Marked.app
 nnoremap <leader>mp :silent !open -a Marked.app '%:p'<cr>
+
 " convert to markdown to html with marked (node) and save to clipboard
 nnoremap <leader>mc :write ! marked \| pbcopy<cr>
+
 " bubble lines to top and bottom of buffer
 nnoremap <leader>bk m'ddggP''
 nnoremap <leader>bj m'ddGp''
+
 " select entire buffer
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
+
 " use Dash.app for man search
 nmap <silent> K <Plug>DashSearch
+
 " expand %% to path of active buffer in ex mode
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " wrap visual selection with backticks for fenced code block
 vnoremap <leader>` <esc>`>o<esc>I```<esc>`<O<esc>I```
+
 " clear search matches when redrawing
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
 " preserve flags when repeating :s
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+
 " make Y consistent with C & D, yy already yanks entire line
 nnoremap Y y$
+
+" Show highlighting groups for current word
+nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 " ---------------------------------------------------------------
 " STYLES
 " ---------------------------------------------------------------
 
+" Terminal colors
 set t_Co=256
 set term=screen-256color
+
+" Set colors according to current iTerm 2 profile
 if $ITERM_PROFILE == 'Solarized Light'
     set background=light
     colorscheme solarized
@@ -243,7 +269,11 @@ else
     colorscheme solarized
     let g:airline_theme='solarized'
 endif
+
+" Macvim / gVim font
 set guifont=Fira\ Mono:h18
+
+" Global colorscheme fixes
 hi SignColumn ctermbg=NONE
 
 " ---------------------------------------------------------------
@@ -382,33 +412,33 @@ nnoremap <leader>w :Goyo<cr>
 " AUTOCOMMANDS & FUNCTIONS
 " ---------------------------------------------------------------
 
+" Set comment string for Sass files
 aug filetype_scss
     au!
     au FileType scss set commentstring=//\ %s
 aug END
 
+" Turn on spellchecking in text files
 aug filetype_text
     au!
     au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
 aug END
 
+" Turn on spellchecking and set hard width for Git commits
 aug filetype_gitcommit
     au!
     au FileType gitcommit setlocal tw=66
     au FileType gitcommit setlocal spell spelllang=en_us
 aug END
 
+" Set initial foldlevel for Vimoutliner files
 aug filetype_vimoutliner
     au!
     au BufRead,BufNewFile *.otl set foldlevel=1
 aug END
 
+" Add node dict for JS files
 aug filetype_js
     au!
     au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 aug END
-
-" Show highlighting groups for current word
-nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
