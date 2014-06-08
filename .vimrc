@@ -167,67 +167,67 @@ nnoremap zG 2zg
 let mapleader=","
 let maplocalleader = "\\"
 "
-" migrate window navigation back to default mapping
+" Migrate window navigation back to default mapping
 nnoremap <leader>h :echoerr "No! use C-w"<cr>
 nnoremap <leader>l :echoerr "No! use C-w"<cr>
 nnoremap <leader>j :echoerr "No! use C-w"<cr>
 nnoremap <leader>k :echoerr "No! use C-w"<cr>
 
-" resize windows with arrows
+" Resize windows with arrows
 nnoremap <up> <C-w>+
 nnoremap <down> <C-w>-
 nnoremap <left> <C-w><
 nnoremap <right> <C-w>>
 
-" toggle plugins
+" Toggle plugins
 nnoremap <leader>jsh :JSHintToggle<cr>
 nnoremap <leader>gu :GundoToggle<cr>
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
 
-" edit vimrc
+" Edit vimrc
 nnoremap <leader>ev :e ~/Dropbox/dotfiles/.vimrc<cr>
 
-" source vimrc
+" Source vimrc
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
-" clear searches
+" Clear searches
 nnoremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
-" delete buffer
+" Delete buffer
 nnoremap <leader>da :bufdo silent! bdelete<cr>
 
-" preview buffer in Marked.app
+" Preview buffer in Marked.app
 nnoremap <leader>mp :silent !open -a Marked.app '%:p'<cr>
 
-" convert to markdown to html with marked (node) and save to clipboard
+" Convert to markdown to html with marked (node) and save to clipboard
 nnoremap <leader>mc :write ! marked \| pbcopy<cr>
 
-" bubble lines to top and bottom of buffer
+" Bubble lines to top and bottom of buffer
 nnoremap <leader>bk m'ddggP''
 nnoremap <leader>bj m'ddGp''
 
-" select entire buffer
+" Select entire buffer
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 
-" use Dash.app for man search
+" Use Dash.app for man search
 nmap <silent> K <Plug>DashSearch
 
-" expand %% to path of active buffer in ex mode
+" Expand %% to path of active buffer in ex mode
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" wrap visual selection with backticks for fenced code block
+" Wrap visual selection with backticks for fenced code block
 vnoremap <leader>` <esc>`>o<esc>I```<esc>`<O<esc>I```
 
-" clear search matches when redrawing
+" Clear search matches when redrawing
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-" preserve flags when repeating :s
+" Preserve flags when repeating :s
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
-" make Y consistent with C & D, yy already yanks entire line
+" Make Y consistent with C & D, yy already yanks entire line
 nnoremap Y y$
 
 " Show highlighting groups for current word
