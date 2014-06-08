@@ -80,6 +80,7 @@ Bundle 'gcmt/wildfire.vim'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'tpope/vim-eunuch'
 Bundle 'junegunn/goyo.vim'
+Bundle 'davidbeckingsale/writegood.vim'
 
 " ---------------------------------------------------------------
 " SETTINGS
