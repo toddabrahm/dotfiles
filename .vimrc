@@ -411,6 +411,15 @@ let g:goyo_width = 65
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
 nnoremap <leader>w :Goyo<cr>
+function! Goyo_before()
+    WritegoodEnable
+    silent !tmux set status off
+endfunction
+function! Goyo_after()
+    WritegoodDisable
+    silent !tmux set status on
+endfunction
+let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS & FUNCTIONS
