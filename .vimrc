@@ -239,6 +239,10 @@ nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 " Keep cursor in place when joining lines
 nnoremap J mzJ`z
 
+" Disable unused mappings
+nnoremap Q <nop>
+nnoremap <F1> <nop>
+
 " ---------------------------------------------------------------
 " STYLES
 " ---------------------------------------------------------------
