@@ -369,14 +369,14 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
-aug settings_neocomplete
-    au!
-    au FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    au FileType python setlocal omnifunc=pythoncomplete#Complete
-    au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-aug END
+augroup settings_neocomplete
+    autocmd!
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
 
 " Neosnippet --------------------------------------------------
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -426,36 +426,36 @@ endfunction
 let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 
 " ---------------------------------------------------------------
-" AUTOCOMMANDS & FUNCTIONS
+" AUTOCOMMANDS
 " ---------------------------------------------------------------
 
 " Set comment string for Sass files
-aug filetype_scss
-    au!
-    au FileType scss set commentstring=//\ %s
-aug END
+augroup filetype_scss
+    autocmd!
+    autocmd FileType scss set commentstring=//\ %s
+augroup END
 
 " Turn on spellchecking in text files
-aug filetype_text
-    au!
-    au BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
-aug END
+augroup filetype_text
+    autocmd!
+    autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
+augroup END
 
 " Turn on spellchecking and set hard width for Git commits
-aug filetype_gitcommit
-    au!
-    au FileType gitcommit setlocal tw=66
-    au FileType gitcommit setlocal spell spelllang=en_us
-aug END
+augroup filetype_gitcommit
+    autocmd!
+    autocmd FileType gitcommit setlocal tw=66
+    autocmd FileType gitcommit setlocal spell spelllang=en_us
+augroup END
 
 " Set initial foldlevel for Vimoutliner files
-aug filetype_vimoutliner
-    au!
-    au BufRead,BufNewFile *.otl set foldlevel=1
-aug END
+augroup filetype_vimoutliner
+    autocmd!
+    autocmd BufRead,BufNewFile *.otl set foldlevel=1
+augroup END
 
 " Add node dict for JS files
-aug filetype_js
-    au!
-    au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-aug END
+augroup filetype_js
+    autocmd!
+    autocmd FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+augroup END
