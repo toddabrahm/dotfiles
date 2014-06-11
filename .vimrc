@@ -150,6 +150,7 @@ set formatoptions=qrn1
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set cpoptions+=$
 set backspace=indent,eol,start
+set shortmess+=I
 
 " Wildmenu
 set wildmenu
