@@ -50,6 +50,7 @@ alias ll="ls -hola"      # Multi-line, hiddens, no group, file-size
 alias la="ls -a"         # One line, hiddens
 alias lt="ls -Goth"      # Multi-line, no hiddens, last modified, no group, file-size
 alias lat="ls -Goath"    # Multi-line, hiddens, last modified, no group, file-size
+alias lr="ls -t1 | head" # List recently modified
 alias catn="cat -n"      # Concat with line numbers
 alias du="du -h -d 2"    # Human readable disk usage
 alias df="df -h"         # Human readable free space
