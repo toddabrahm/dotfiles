@@ -95,25 +95,25 @@ set hidden
 set noswapfile
 set nobackup
 set nowritebackup
-set virtualedit=all
 set autoread
 set autowrite
 set nrformats=
 set clipboard=unnamed
 set history=200
 
-" Gui options
-set showmatch
-set showcmd
+" UI options
+set guioptions=agi
 set ruler
 set number
-set guioptions=agi
+set showmatch
+set showcmd
 set mousehide
 set laststatus=2
 set scrolloff=5
 set showmode
 set splitbelow
 set splitright
+set virtualedit=all
 
 " Indenting
 set tabstop=4
@@ -142,9 +142,11 @@ set ignorecase
 set smartcase
 set hlsearch
 
-" Misc options
+" List characters
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
+
+" Misc options
 set timeoutlen=300
 set formatoptions=qrn1
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
