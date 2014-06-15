@@ -169,7 +169,13 @@ nnoremap zG 2zg
 
 let mapleader=","
 let maplocalleader = "\\"
-"
+
+" Swap real line movement with display line movement
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
 " Migrate window navigation back to default mapping
 nnoremap <leader>h :echoerr "No! use C-w"<cr>
 nnoremap <leader>l :echoerr "No! use C-w"<cr>
