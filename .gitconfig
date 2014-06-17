@@ -17,6 +17,7 @@
     dev = checkout dev
     a = add
     aa = add -A
+    ac = !git add -A && git commit
     as = !git add . && git status
     c= commit
     cm = commit -m
