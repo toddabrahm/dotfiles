@@ -140,6 +140,7 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
+set gdefault
 
 " List characters
 set nolist
