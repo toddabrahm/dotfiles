@@ -99,6 +99,9 @@ set autowrite
 set nrformats=
 set clipboard=unnamed
 set history=200
+set timeoutlen=300
+set formatoptions=qrn1
+set backspace=indent,eol,start
 
 " UI options
 set guioptions=agi
@@ -113,6 +116,7 @@ set showmode
 set splitbelow
 set splitright
 set virtualedit=all
+set shortmess+=I
 
 " Indenting
 set tabstop=4
@@ -145,14 +149,10 @@ set gdefault
 " List characters
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
-
-" Misc options
-set timeoutlen=300
-set formatoptions=qrn1
-set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set cpoptions+=$
-set backspace=indent,eol,start
-set shortmess+=I
+
+" Session options
+set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 
 " Wildmenu
 set wildmenu
