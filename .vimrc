@@ -441,7 +441,7 @@ let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 " COMMANDS
 " ---------------------------------------------------------------
 
-command TmuxStatus silent !tmux set status
+command! TmuxStatus silent !tmux set status
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS
