@@ -80,6 +80,7 @@ Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'tpope/vim-eunuch'
 Bundle 'junegunn/goyo.vim'
 Bundle 'davidbeckingsale/writegood.vim'
+Bundle 'tpope/vim-characterize'
 
 " ---------------------------------------------------------------
 " SETTINGS
