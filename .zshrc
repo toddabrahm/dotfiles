@@ -7,12 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dontblinks"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git vi-mode osx)
-source $ZSH/oh-my-zsh.sh
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-source ~/bin/tmuxinator.zsh
 unsetopt correct_all
 export TERM=xterm-256color
 export EDITOR=~/bin/vim
@@ -20,17 +14,20 @@ export HISTSIZE=1000
 export HISTFILESIZE=100000
 export HISTCONTROL=erasedups
 export GREP_OPTIONS='--color=auto'
+export LESSPIPE=`which src-hilite-lesspipe.sh`
+export LESSOPEN="| ${LESSPIPE} %s"
+export LESS='-R'
 export PATH="/usr/local/share/npm/bin:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$HOME/bin:${PATH}"
-PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:$HOME/.rvm/bin
+[[ -s $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+[[ -s ~/.localrc ]] && source ~/.localrc
+[[ -s ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 . `brew --prefix`/etc/profile.d/z.sh
 eval "$(fasd --init auto)"
-LESSPIPE=`which src-hilite-lesspipe.sh`
-export LESSOPEN="| ${LESSPIPE} %s"
-export LESS='-R'
 
 # ----------------------------------------------------------------
 # BINDINGS
