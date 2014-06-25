@@ -14,9 +14,10 @@ indent_style = space
 indent_size = 4
 
 # 2 space indentation
-[*.{html,css,scss,jade,haml,rb,md,yml}]
+[*.{js,html,css,scss,jade,haml,rb,md,yml}]
 indent_style = space
 indent_size = 2
 
+# Tab indentation
 [*.otl]
 indent_style = tab
