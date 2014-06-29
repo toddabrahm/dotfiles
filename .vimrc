@@ -439,7 +439,11 @@ let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 " COMMANDS
 " ---------------------------------------------------------------
 
+" Toggle Tmux status bar
 command! TmuxStatus silent !tmux set status
+
+" Open Finder Here
+command! Finder silent !open .
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS
