@@ -422,7 +422,6 @@ function! Goyo_before()
     silent !tmux set status off
 endfunction
 function! Goyo_after()
-    WritegoodDisable
     silent !tmux set status on
 endfunction
 let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
