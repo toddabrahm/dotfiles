@@ -70,6 +70,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'junegunn/goyo.vim'
 Plugin 'davidbeckingsale/writegood.vim'
 Plugin 'tpope/vim-characterize'
+Plugin 'scrooloose/syntastic'
 
 " ---------------------------------------------------------------
 " SETTINGS
