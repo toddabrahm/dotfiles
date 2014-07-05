@@ -427,6 +427,15 @@ function! Goyo_after()
 endfunction
 let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 
+" Syntastic------------------------------------------------------
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_html_checkers = ['w3']
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_css_checkers = ["csslint"]
+
 " ---------------------------------------------------------------
 " COMMANDS
 " ---------------------------------------------------------------
