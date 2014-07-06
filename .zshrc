@@ -7,7 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dontblinks"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git vi-mode osx)
-unsetopt correct_all
 export TERM=xterm-256color
 export EDITOR=~/bin/vim
 export HISTSIZE=1000
@@ -28,6 +27,7 @@ export PATH=$PATH:$HOME/.rvm/bin
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 . `brew --prefix`/etc/profile.d/z.sh
 eval "$(fasd --init auto)"
+unsetopt correct_all
 
 # ----------------------------------------------------------------
 # BINDINGS
