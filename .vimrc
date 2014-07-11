@@ -310,6 +310,7 @@ nnoremap <C-p>m :CtrlPMRU<cr>
 nnoremap <C-p>b :CtrlPBuffer<cr>
 nnoremap <C-p>t :CtrlPTag<cr>
 let g:ctrlp_open_multiple_files = 'i'
+let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
 func! MyCtrlPMappings()
     nnoremap <buffer> <silent> <c-@> :call <sid>DeleteBuffer()<cr>
