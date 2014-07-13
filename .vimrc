@@ -264,14 +264,6 @@ elseif $ITERM_PROFILE == 'Basic'
     set background=light
     colorscheme base16-google
     let g:airline_theme='understated'
-elseif $ITERM_PROFILE == 'Flat Dark'
-    set background=dark
-    colorscheme base16-flat
-    let g:airline_theme='base16'
-elseif $ITERM_PROFILE == 'Flat Light'
-    set background=light
-    colorscheme base16-flat
-    let g:airline_theme='base16'
 else
     set background=dark
     colorscheme solarized
