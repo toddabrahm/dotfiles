@@ -271,7 +271,7 @@ else
 endif
 
 " Macvim / gVim font
-set guifont=Fira\ Mono:h18
+set guifont=Fira\ Mono:h14
 
 " Global colorscheme fixes
 hi SignColumn ctermbg=NONE
