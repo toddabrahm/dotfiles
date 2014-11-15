@@ -165,12 +165,6 @@ nnoremap k gk
 nnoremap gj j
 nnoremap gk k
 
-" Migrate window navigation back to default mapping
-nnoremap <leader>h :echoerr "No! use C-w"<cr>
-nnoremap <leader>l :echoerr "No! use C-w"<cr>
-nnoremap <leader>j :echoerr "No! use C-w"<cr>
-nnoremap <leader>k :echoerr "No! use C-w"<cr>
-
 " Resize windows with arrows
 nnoremap <up> <C-w>+
 nnoremap <down> <C-w>-
