@@ -102,45 +102,45 @@ fi
 # ----------------------------------------------------------------
 
 # Find shorthand (also suppressing errors)
-fnd () {
+fnd() {
     find . -name "$1" 2>/dev/null
 }
 
 # New named tmux session here with pwd as default-path
-tmx () {
+tmx() {
     tmux new -s $1 -c $PWD
 }
 
 # Collapsed pwd relative to $HOME
-pwdr () {
+pwdr() {
     echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
 # Colorize less and cat output with Pygments
-lessp () {
+lessp() {
     pygmentize -O style=solarized -f console256 -g "$1" | less
 }
-catp () {
+catp() {
     pygmentize -O style=solarized -f console256 -g "$1"
 }
 
 # Output single line
-line () {
+line() {
     sed -n $1p $2
 }
 
 # Make directory including parents and cd to it
-mkc () {
+mkc() {
     mkdir -p "$@" && cd "$@"
 }
 
 # Inspect beg/end of file http://is.gd/vtliFU
-i () {
+i() {
     (head -n 5; tail -n 5) < "$1" | column -t
 }
 
 # Make sure file is plain text then copy to clipboard
-clip () {
+clip() {
     type=`file "$1"|grep -c text`
     if [ $type -gt 0 ]; then
         cat "$@"|pbcopy
@@ -151,12 +151,12 @@ clip () {
 }
 
 # Copy input file to clipboard as base64
-b64 () {
+b64() {
     cat $1 | openssl enc -base64 | tr -d '\n' | pbcopy
 }
 
 # Create a data URL from a file
-dataurl () {
+dataurl() {
         local mimeType=$(file -b --mime-type "$1")
         if [[ $mimeType == text/* ]]; then
                 mimeType="${mimeType};charset=utf-8"
@@ -165,23 +165,23 @@ dataurl () {
 }
 
 # Fetch ip info
-geoip () {
+geoip() {
     curl -s http://freegeoip.net/json/$1 | jq '.'
 }
 
 # URL encode and echo
-url-encode () {
+url-encode() {
         setopt extendedglob
         echo "${${(j: :)@}//(#b)(?)/%$[[##16]##${match[1]}]}"
 }
 
 # Search google
-google () {
+google() {
        chrome "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
 }
 
 # Open url in all orowsers
-browsers () {
+browsers() {
     safari $1
     firefox $1
     opera $1
@@ -189,16 +189,24 @@ browsers () {
 }
 
 # Open argument in Dash
-dash () {
+dash() {
 	open "dash://$(url-encode $@)"
 }
 
 # Change working directory to the top-most Finder window location
-cd2finder () {
+cd2finder() {
     cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
 }
 
 # Change working directory to nearest Git root
-cd2gitroot () {
+cd2gitroot() {
     cd $(git rev-parse --show-toplevel)
+}
+
+# Get gzipped size
+gz() {
+    echo "orig size    (bytes): "
+    cat "$1" | wc -c
+    echo "gzipped size (bytes): "
+    gzip -c "$1" | wc -c
 }
