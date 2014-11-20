@@ -177,7 +177,7 @@ url-encode() {
 
 # Search google
 google() {
-       chrome "http://www.google.com/search?q=`url-encode "${(j: :)@}"`"
+       chrome "https://www.google.com/search?q=`url-encode "${(j: :)@}"`"
 }
 
 # Open url in all orowsers
