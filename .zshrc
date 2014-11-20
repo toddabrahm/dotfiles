@@ -134,6 +134,11 @@ mkc() {
     mkdir -p "$@" && cd "$@"
 }
 
+# Copy w/ progress
+cp_p() {
+  rsync -WavP --human-readable --progress $1 $2
+}
+
 # Inspect beg/end of file http://is.gd/vtliFU
 i() {
     (head -n 5; tail -n 5) < "$1" | column -t
