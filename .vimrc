@@ -190,7 +190,7 @@ nnoremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 nnoremap <leader>da :bufdo silent! bdelete<cr>
 
 " Preview buffer in Marked.app
-nnoremap <leader>mp :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>mp :silent !open -a Marked\ 2.app '%:p'<cr>
 
 " Convert to markdown to html with marked (node) and save to clipboard
 nnoremap <leader>mc :write ! marked \| pbcopy<cr>
