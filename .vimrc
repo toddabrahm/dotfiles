@@ -395,7 +395,7 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 " goyo.vim ------------------------------------------------------
-let g:goyo_width = 65
+let g:goyo_width = 80
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
 nnoremap <leader>w :Goyo<cr>
