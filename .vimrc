@@ -45,7 +45,6 @@ Plugin 'myhere/vim-nodejs-complete'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'file://Users/t/Dropbox/dotfiles/.vim/bundle/vim-snippets'
 Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'tommcdo/vim-exchange'
@@ -203,9 +202,6 @@ nnoremap <leader>bj m'ddGp''
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 
-" Use Dash.app for man search
-nmap <silent> K <Plug>DashSearch
-
 " Expand %% to path of active buffer in ex mode
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
@@ -231,6 +227,7 @@ nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
 
 " Disable unused mappings
+nnoremap K <nop>
 nnoremap Q <nop>
 nnoremap <F1> <nop>
 
