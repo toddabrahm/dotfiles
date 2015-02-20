@@ -48,7 +48,6 @@ Plugin 'rizzatti/funcoo.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'tommcdo/vim-exchange'
-Plugin 'lord-garbage/tslime.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'coderifous/textobj-word-column.vim'
@@ -375,11 +374,6 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 " Markdown Folding
 let g:markdown_fold_style = 'nested'
-
-" tslime.vim ----------------------------------------------------
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuVars
 
 " tmux-complete.vim ---------------------------------------------
 let g:tmuxcomplete#trigger = ''
