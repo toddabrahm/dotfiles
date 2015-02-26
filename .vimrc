@@ -465,3 +465,9 @@ augroup filetype_js
     autocmd!
     autocmd FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 augroup END
+
+" Set filetype for Vagrantfiles
+augroup vagrant
+  au!
+  au BufRead,BufNewFile Vagrantfile set filetype=ruby
+augroup END
