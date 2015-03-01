@@ -240,6 +240,12 @@ gifify() {
 
 # Turn that video into webm.
 # brew reinstall ffmpeg --with-libvpx
-webmify(){
+webmify() {
 	ffmpeg -i $1 -vcodec libvpx -acodec libvorbis -isync -copyts -aq 80 -threads 3 -qmax 30 -y $2 $1.webm
+}
+
+# Take this repo and copy it to somewhere else minus the .git stuff.
+gitexport() {
+	mkdir -p "$1"
+	git archive master | tar -x -C "$1"
 }
