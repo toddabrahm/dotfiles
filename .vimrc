@@ -421,6 +421,9 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_html_checkers = ['w3']
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_css_checkers = ["csslint"]
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["html"] }
 
 " ---------------------------------------------------------------
 " COMMANDS
