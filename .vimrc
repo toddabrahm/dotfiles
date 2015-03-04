@@ -77,7 +77,6 @@ Plugin 'nelstrom/vim-qargs'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'junegunn/goyo.vim'
-Plugin 'davidbeckingsale/writegood.vim'
 Plugin 'tpope/vim-characterize'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/syntastic'
@@ -405,7 +404,6 @@ let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
 nnoremap <leader>w :Goyo<cr>
 function! Goyo_before()
-    WritegoodEnable
     silent !tmux set status off
 endfunction
 function! Goyo_after()
@@ -413,7 +411,7 @@ function! Goyo_after()
 endfunction
 let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 
-" Syntastic------------------------------------------------------
+" Syntastic -----------------------------------------------------
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
@@ -472,6 +470,6 @@ augroup END
 
 " Set filetype for Vagrantfiles
 augroup vagrant
-  au!
-  au BufRead,BufNewFile Vagrantfile set filetype=ruby
+  autocmd!
+  autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
