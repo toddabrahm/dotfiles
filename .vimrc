@@ -443,12 +443,6 @@ augroup filetype_scss
     autocmd FileType scss set commentstring=//\ %s
 augroup END
 
-" Turn on spellchecking in text files
-augroup filetype_text
-    autocmd!
-    autocmd BufRead,BufNewFile *.txt,*.md,*.markdown,*.readme setlocal spell spelllang=en_us
-augroup END
-
 " Turn on spellchecking and set hard width for Git commits
 augroup filetype_gitcommit
     autocmd!
