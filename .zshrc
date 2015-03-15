@@ -7,6 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dontblinks"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git git-extras vi-mode osx vagrant)
+fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=xterm-256color
 export EDITOR=~/bin/vim
 export HISTSIZE=1000
@@ -22,7 +23,6 @@ export PATH="$HOME/bin:${PATH}"
 export PATH=$PATH:$HOME/.rvm/bin
 [[ -s $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 [[ -s ~/.localrc ]] && source ~/.localrc
-[[ -s ~/bin/tmuxinator.zsh ]] && source ~/bin/tmuxinator.zsh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 . `brew --prefix`/etc/profile.d/z.sh
