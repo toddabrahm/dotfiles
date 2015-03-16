@@ -421,7 +421,7 @@ let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_css_checkers = ["csslint"]
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "passive_filetypes": ["html"] }
+    \ "passive_filetypes": ["html", "css", "scss"] }
 
 " ---------------------------------------------------------------
 " COMMANDS
