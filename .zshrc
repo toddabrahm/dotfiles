@@ -14,9 +14,6 @@ export HISTSIZE=1000
 export HISTFILESIZE=100000
 export HISTCONTROL=erasedups
 export GREP_OPTIONS='--color=auto'
-export LESSPIPE=`which src-hilite-lesspipe.sh`
-export LESSOPEN="| ${LESSPIPE} %s"
-export LESS='-R'
 export PATH="/usr/local/share/npm/bin:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
 export PATH="$HOME/bin:${PATH}"
