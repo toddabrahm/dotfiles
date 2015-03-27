@@ -14,6 +14,7 @@ Plugin 'gmarik/vundle'
 " Load plugins
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'whatyouhide/vim-gotham'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Shougo/neocomplete.vim'
@@ -257,6 +258,10 @@ if $ITERM_PROFILE == 'Solarized Light'
     set background=light
     colorscheme solarized
     let g:airline_theme='solarized'
+elseif $ITERM_PROFILE == "Gotham"
+    set background=dark
+    colorscheme gotham
+    let g:airline_theme='gotham'
 elseif $ITERM_PROFILE == "Writing"
     set background=light
     colorscheme writing
