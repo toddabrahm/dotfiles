@@ -303,9 +303,6 @@ let g:airline_right_alt_sep = ''
 
 " Ctrl-P ------------------------------------------------------
 let g:ctrlp_cmd = 'CtrlP'
-nnoremap <C-p>m :CtrlPMRU<cr>
-nnoremap <C-p>b :CtrlPBuffer<cr>
-nnoremap <C-p>t :CtrlPTag<cr>
 let g:ctrlp_open_multiple_files = 'i'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
@@ -316,6 +313,7 @@ func! s:DeleteBuffer()
     exec "bd" fnamemodify(getline('.')[2:], ':p')
     exec "norm \<F5>"
 endfunc
+let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|DS_Store\|git'
 
 " Emmet -------------------------------------------------------
 let g:user_emmet_leader_key = '<c-e>'
