@@ -82,6 +82,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-characterize'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'Konfekt/FastFold'
 
 " ---------------------------------------------------------------
 " SETTINGS
