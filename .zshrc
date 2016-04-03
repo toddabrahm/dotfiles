@@ -16,6 +16,7 @@ export HISTCONTROL=erasedups
 export GREP_OPTIONS='--color=auto'
 export PATH="/usr/local/share/npm/bin:${PATH}"
 export PATH="/usr/local/bin:${PATH}"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/bin:${PATH}"
 export PATH=$PATH:$HOME/.rvm/bin
 [[ -s $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
@@ -25,7 +26,6 @@ export PATH=$PATH:$HOME/.rvm/bin
 . `brew --prefix`/etc/profile.d/z.sh
 eval "$(fasd --init auto)"
 unsetopt correct_all
-
 # ----------------------------------------------------------------
 # BINDINGS
 # ----------------------------------------------------------------
