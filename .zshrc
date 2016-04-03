@@ -81,6 +81,8 @@ alias vimupdate="vim +BundleInstall! +qall"
 alias ni="npm install --save-dev"
 alias bo="bower install --save-dev"
 
+alias mux=tmuxinator
+
 # OS X-only
 if [[ "$OSTYPE" == darwin* ]]; then
   alias c='pbcopy'
