@@ -408,13 +408,6 @@ let g:goyo_width = 80
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
 nnoremap <leader>w :Goyo<cr>
-function! Goyo_before()
-    silent !tmux set status off
-endfunction
-function! Goyo_after()
-    silent !tmux set status on
-endfunction
-let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
 
 " Syntastic -----------------------------------------------------
 let g:syntastic_check_on_open = 1
@@ -434,6 +427,7 @@ let g:syntastic_mode_map = {
 
 " Toggle Tmux status bar
 command! TmuxStatus silent !tmux set status
+nnoremap <leader>ts :TmuxStatus<cr>
 
 " Open Finder Here
 command! Finder silent !open .
