@@ -17,9 +17,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neoyank.vim'
+Plugin 'Shougo/unite-outline'
 Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
 Plugin 'majutsushi/tagbar'
@@ -303,20 +306,6 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
-" Ctrl-P ------------------------------------------------------
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_open_multiple_files = 'i'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_buffer_func = { 'enter': 'MyCtrlPMappings' }
-func! MyCtrlPMappings()
-    nnoremap <buffer> <silent> <c-@> :call <sid>DeleteBuffer()<cr>
-endfunc
-func! s:DeleteBuffer()
-    exec "bd" fnamemodify(getline('.')[2:], ':p')
-    exec "norm \<F5>"
-endfunc
-let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|DS_Store\|git'
-
 " Emmet -------------------------------------------------------
 let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
@@ -336,6 +325,32 @@ let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 let delimitMate_matchpairs = "(:),[:],{:}"
 let delimitMate_balance_matchpairs = 1
+
+" Unite -------------------------------------------------------
+
+" Source mappings (,f = file, ,g = grep, ,b = buffer, etc)
+nnoremap <C-p> :Unite -no-split -unique -buffer-name=unite buffer file file_rec/async<cr>
+nnoremap <leader>f :Unite -no-split -buffer-name=files file_rec<cr>
+nnoremap <leader>g :Unite -no-split -buffer-name=grep grep<cr>
+nnoremap <leader>b :Unite -no-split -buffer-name=buffers buffer<cr>
+nnoremap <leader>y :Unite -no-split -buffer-name=yanks history/yank<cr>
+nnoremap <leader>o :Unite -no-split -buffer-name=outline outline<cr>
+
+" Use ag (silver searcher) for grep
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts =
+    \ '-i --vimgrep --hidden --ignore ' .
+    \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+let g:unite_source_grep_recursive_opt = ''
+
+" Set mappings inside unite buffers
+function! s:unite_settings() "{
+    imap <buffer> <C-j> <Plug>(unite_select_next_line)
+    imap <buffer> <C-k> <Plug>(unite_select_previous_line)
+    nmap <buffer> <Esc>     <Plug>(unite_exit)
+    nmap <buffer> <C-l> :<C-u>nohlsearch<CR><C-l>
+ endfunction
+autocmd FileType unite call s:unite_settings()
 
 " neocomplete -------------------------------------------------
 let g:acp_enableAtStartup = 0
