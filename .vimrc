@@ -155,7 +155,6 @@ nnoremap <right> <C-w>>
 
 " Toggle plugins
 nnoremap <leader>jsh :JSHintToggle<cr>
-nnoremap <leader>gu :GundoToggle<cr>
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
 
@@ -257,15 +256,6 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" Airline -----------------------------------------------------
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-
 " Emmet -------------------------------------------------------
 let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
@@ -352,6 +342,27 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neosnippet#disable_runtime_snippets = { '_' : 1, }
 
+" Syntastic -----------------------------------------------------
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_html_checkers = ['w3']
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_css_checkers = ["csslint"]
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["html", "css", "scss"] }
+
+" Airline -----------------------------------------------------
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
 " Polyglot syntax bundle ----------------------------------------
 let g:polyglot_disabled = ['markdown']
 
@@ -369,18 +380,6 @@ let g:goyo_width = 80
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
 nnoremap <leader>w :Goyo<cr>
-
-" Syntastic -----------------------------------------------------
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_html_checkers = ['w3']
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:syntastic_css_checkers = ["csslint"]
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["html", "css", "scss"] }
 
 " ---------------------------------------------------------------
 " COMMANDS
@@ -414,12 +413,6 @@ augroup END
 augroup filetype_vimoutliner
     autocmd!
     autocmd BufRead,BufNewFile *.otl set foldlevel=1
-augroup END
-
-" Add node dict for JS files
-augroup filetype_js
-    autocmd!
-    autocmd FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
 augroup END
 
 " Set filetype for Vagrantfiles
