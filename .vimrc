@@ -23,6 +23,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neoyank.vim'
 Plugin 'Shougo/unite-outline'
+Plugin 'Konfekt/FastFold'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
@@ -33,31 +34,20 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'tpope/vim-git'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-markdown'
-Plugin 'othree/html5.vim'
-Plugin 'JulesWang/css.vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'leshill/vim-json'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'tommcdo/vim-exchange'
+Plugin 'AndrewRadev/switch.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kana/vim-textobj-user'
 Plugin 'lucapette/vim-textobj-underscore'
-Plugin 'AndrewRadev/switch.vim'
-Plugin 'nelstrom/vim-qargs'
-Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'junegunn/goyo.vim'
-Plugin 'tpope/vim-characterize'
 Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'Konfekt/FastFold'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'file://Users/t/Dropbox/dotfiles/.vim/bundle/vim-snippets'
 
@@ -280,16 +270,6 @@ let g:airline_right_alt_sep = ''
 let g:user_emmet_leader_key = '<c-e>'
 let g:use_emmet_complete_tag = 1
 
-" Tagbar ------------------------------------------------------
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-let g:tagbar_width=26
-nnoremap <silent> <leader>tb :TagbarToggle<cr>
-
-" Gist.vim ----------------------------------------------------
-let g:gist_post_private = 1
-let g:gist_show_privates = 1
-let g:gist_clip_command = 'pbcopy'
-
 " delimitMate -------------------------------------------------
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
@@ -372,21 +352,17 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neosnippet#disable_runtime_snippets = { '_' : 1, }
 
+" Polyglot syntax bundle ----------------------------------------
+let g:polyglot_disabled = ['markdown']
+
 " Markdown.vim --------------------------------------------------
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'scss', 'xml', 'python', 'sh']
 
 " Markdown Folding
 let g:markdown_fold_style = 'nested'
 
-" tmux-complete.vim ---------------------------------------------
-let g:tmuxcomplete#trigger = ''
-
 " git-gutter ----------------------------------------------------
 let g:gitgutter_realtime = 0
-
-" splitjoin.vim -------------------------------------------------
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
 
 " goyo.vim ------------------------------------------------------
 let g:goyo_width = 80
