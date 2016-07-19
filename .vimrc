@@ -46,7 +46,6 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'lucapette/vim-textobj-underscore'
 Plugin 'tpope/vim-eunuch'
 Plugin 'junegunn/goyo.vim'
-Plugin 'wookiehangover/jshint.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'vimoutliner/vimoutliner'
 Plugin 'file://Users/t/Dropbox/dotfiles/.vim/bundle/vim-snippets'
@@ -154,7 +153,6 @@ nnoremap <left> <C-w><
 nnoremap <right> <C-w>>
 
 " Toggle plugins
-nnoremap <leader>jsh :JSHintToggle<cr>
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
 
