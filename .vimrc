@@ -155,6 +155,7 @@ nnoremap <right> <C-w>>
 " Toggle plugins
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
+nnoremap <leader>l :SyntasticCheck<cr>
 
 " Edit vimrc
 nnoremap <leader>ev :e ~/Dropbox/dotfiles/.vimrc<cr>
@@ -345,7 +346,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
-let g:syntastic_html_checkers = ['w3']
+let g:syntastic_html_checkers = ['validator']
+let g:syntastic_html_validator_parser = 'html5'
 let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_css_checkers = ["csslint"]
 let g:syntastic_mode_map = {
