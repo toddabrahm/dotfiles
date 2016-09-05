@@ -269,25 +269,27 @@ let delimitMate_balance_matchpairs = 1
 
 " Source mappings (,f = file, ,g = grep, ,b = buffer, etc)
 nnoremap <C-p> :Unite -no-split -unique -buffer-name=unite buffer file file_rec/async<cr>
-nnoremap <leader>f :Unite -no-split -buffer-name=files file_rec<cr>
+nnoremap <leader>f :Unite -no-split -buffer-name=files file_rec/async<cr>
 nnoremap <leader>g :Unite -no-split -buffer-name=grep grep<cr>
 nnoremap <leader>b :Unite -no-split -buffer-name=buffers buffer<cr>
 nnoremap <leader>y :Unite -no-split -buffer-name=yanks history/yank<cr>
 nnoremap <leader>o :Unite -no-split -buffer-name=outline outline<cr>
+nnoremap <leader>r :UniteResume<cr>
 
 " Use ag (silver searcher) for grep
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts =
-    \ '-i --vimgrep --hidden --ignore ' .
-    \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
-let g:unite_source_grep_recursive_opt = ''
+if executable('ag')
+    let g:unite_source_rec_async_command = ['ag', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', '']
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --hidden --ignore-dir={.git, .hg, .svn, .bzr, node_modules}'
+    let g:unite_source_grep_recursive_opt = ''
+endif
 
 " Set mappings inside unite buffers
 function! s:unite_settings() "{
     imap <buffer> <C-j> <Plug>(unite_select_next_line)
     imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-    nmap <buffer> <Esc>     <Plug>(unite_exit)
-    nmap <buffer> <C-l> :<C-u>nohlsearch<CR><C-l>
+    nmap <buffer> <Esc> <Plug>(unite_exit)
+    nmap <buffer> <C-l> <Plug>(unite_redraw)
  endfunction
 autocmd FileType unite call s:unite_settings()
 
