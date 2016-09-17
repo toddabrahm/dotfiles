@@ -244,6 +244,8 @@ set guifont=Fira\ Mono:h14
 
 " Global colorscheme fixes
 hi SignColumn ctermbg=NONE
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=1
 
 " ---------------------------------------------------------------
 " PLUGINS
