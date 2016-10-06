@@ -14,7 +14,6 @@ Plugin 'gmarik/vundle'
 " Load plugins
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Shougo/vimproc.vim'
@@ -220,27 +219,18 @@ nnoremap <F1> <nop>
 set t_Co=256
 set term=screen-256color
 
-" Set colors according to current iTerm 2 profile
+colorscheme solarized
+let g:airline_theme='solarized'
+
+" Set background according to current iTerm 2 profile
 if $ITERM_PROFILE == 'Solarized Light'
     set background=light
-    colorscheme solarized
-    let g:airline_theme='solarized'
-elseif $ITERM_PROFILE == "Writing"
-    set background=light
-    colorscheme writing
-    let g:airline_theme='monochrome'
-elseif $ITERM_PROFILE == 'Basic'
-    set background=light
-    colorscheme base16-google
-    let g:airline_theme='understated'
 else
     set background=dark
-    colorscheme solarized
-    let g:airline_theme='solarized'
 endif
 
 " Macvim / gVim font
-set guifont=Fira\ Mono:h14
+set guifont=Hack:h20
 
 " Global colorscheme fixes
 hi SignColumn ctermbg=NONE
