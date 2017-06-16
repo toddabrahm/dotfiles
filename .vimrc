@@ -13,7 +13,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet.vim'
