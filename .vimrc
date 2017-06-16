@@ -17,6 +17,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet.vim'
+Plug 'honza/vim-snippets'
 Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/unite-outline'
 Plug 'Konfekt/FastFold'
@@ -44,7 +45,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/syntastic'
 Plug 'vimoutliner/vimoutliner'
-Plug 'file://Users/t/Dropbox/dotfiles/.vim/bundle/vim-snippets'
 
 call plug#end()
 
@@ -331,7 +331,7 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
 let g:neosnippet#disable_runtime_snippets = { '_' : 1, }
 
 " Syntastic -----------------------------------------------------
