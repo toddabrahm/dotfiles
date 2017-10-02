@@ -1,8 +1,14 @@
 let g:colors_name="vo-solarized"
 
-hi OL1 ctermfg=14
-hi OL2 ctermfg=12
-hi OL3 ctermfg=11
+if &background == "light"
+    hi Normal ctermbg=7
+else
+    hi Normal ctermbg=NONE
+endif
+
+hi OL1 ctermfg=10
+hi OL2 ctermfg=10
+hi OL3 ctermfg=10
 hi OL4 ctermfg=10
 hi OL5 ctermfg=10
 hi OL6 ctermfg=10
@@ -69,7 +75,7 @@ hi UB8 guifg=#585858 ctermfg=10
 hi UB9 guifg=#585858 ctermfg=10
 
 " colors for folded sections
-hi Folded guifg=NONE guibg=NONE cterm=NONE ctermfg=14 ctermbg=NONE
+hi Folded guifg=NONE guibg=NONE cterm=NONE ctermfg=10 ctermbg=NONE
 hi FoldColumn guifg=NONE guibg=NONE  ctermfg=10 ctermbg=NONE
 
 " colors for experimental spelling error highlighting
