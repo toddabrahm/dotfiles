@@ -44,6 +44,8 @@ Plug 'lucapette/vim-textobj-underscore'
 Plug 'tpope/vim-eunuch'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/syntastic'
+Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'prettier/vim-prettier'
 Plug 'vimoutliner/vimoutliner'
 
 call plug#end()
@@ -259,7 +261,7 @@ let delimitMate_balance_matchpairs = 1
 " Unite -------------------------------------------------------
 
 " Source mappings (,f = file, ,g = grep, ,b = buffer, etc)
-nnoremap <C-p> :Unite -no-split -unique -buffer-name=unite buffer file file_rec/async<cr>
+nnoremap <leader>u :Unite -no-split -unique -buffer-name=unite buffer file file_rec/async<cr>
 nnoremap <leader>f :Unite -no-split -buffer-name=files file_rec/async<cr>
 nnoremap <leader>g :Unite -no-split -buffer-name=grep grep<cr>
 nnoremap <leader>b :Unite -no-split -buffer-name=buffers buffer<cr>
@@ -338,14 +340,15 @@ let g:neosnippet#disable_runtime_snippets = { '_' : 1, }
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_html_checkers = ['validator']
 let g:syntastic_html_validator_parser = 'html5'
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:syntastic_css_checkers = ["csslint"]
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["html", "css", "scss"] }
+    \ 'mode': 'active',
+    \ 'passive_filetypes': ['html', 'css', 'scss'] }
 
 " Airline -----------------------------------------------------
 let g:airline#extensions#whitespace#enabled = 0
