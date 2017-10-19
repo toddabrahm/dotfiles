@@ -1,7 +1,12 @@
 let g:colors_name="vo-solarized"
 
+" highlight NonText ctermbg=none
+" highlight Normal ctermbg=none
+
 if &background == "light"
-    hi Normal ctermbg=15
+    " set background=light
+    " LIGHT STYLES
+    hi Normal ctermbg=15 ctermfg=10
 
     hi OL1 ctermfg=10
     hi OL2 ctermfg=10
@@ -85,8 +90,12 @@ if &background == "light"
     syn match outlTags '_ilink_\s*\(.\{-}:\s\)\?.*' contained
     syn match outlTags '\s@\w*' contained
     hi outlTags ctermfg=5 cterm=bold
+
 else
-    hi Normal ctermbg=NONE ctermfg=14
+    set background=dark
+    " DARK STYLES
+    " hi Normal ctermbg=8 ctermfg=14
+    hi Normal ctermbg=8 ctermfg=14
 
     hi OL1 ctermfg=14
     hi OL2 ctermfg=14
@@ -170,4 +179,5 @@ else
     syn match outlTags '_ilink_\s*\(.\{-}:\s\)\?.*' contained
     syn match outlTags '\s@\w*' contained
     hi outlTags ctermfg=5 cterm=bold
+
 endif
