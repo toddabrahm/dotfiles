@@ -17,11 +17,10 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet.vim'
-Plug 'honza/vim-snippets'
 Plug 'Shougo/neoyank.vim'
+Plug 'honza/vim-snippets'
 Plug 'Shougo/unite-outline'
 Plug 'Konfekt/FastFold'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -32,9 +31,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-fugitive'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-markdown'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'nelstrom/vim-markdown-folding'
 Plug 'tommcdo/vim-exchange'
 Plug 'AndrewRadev/switch.vim'
 Plug 'tpope/vim-vinegar'
@@ -42,11 +38,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'tpope/vim-eunuch'
-Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/syntastic'
-Plug 'mtscout6/syntastic-local-eslint.vim'
-Plug 'prettier/vim-prettier'
 Plug 'vimoutliner/vimoutliner'
+Plug 'shawncplus/phpcomplete.vim', {'for': ['php', 'html']}
+Plug 'mattn/emmet-vim', {'for': ['html', 'markdown']}
+Plug 'tpope/vim-markdown', {'for': ['markdown']}
+Plug 'nelstrom/vim-markdown-folding', {'for': ['markdown']}
+Plug 'junegunn/goyo.vim', {'for': ['markdown', 'votl']}
+Plug 'mtscout6/syntastic-local-eslint.vim', {'for': ['javascript', 'jsx']}
+Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
 
 call plug#end()
 
