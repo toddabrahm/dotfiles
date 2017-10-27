@@ -1,3 +1,4 @@
 .vim/plugged/
 .nvim/plugged/
 .oh-my-zsh
+.netrwhist
