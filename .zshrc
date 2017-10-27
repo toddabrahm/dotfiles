@@ -9,7 +9,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git git-extras vi-mode osx vagrant)
 fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=xterm-256color
-export EDITOR=vim
+export EDITOR=nvim
 export HISTSIZE=1000
 export HISTFILESIZE=100000
 export HISTCONTROL=erasedups
@@ -41,6 +41,8 @@ bindkey -M vicmd v edit-command-line
 # ALIASES
 # ----------------------------------------------------------------
 
+alias vim="nvim"
+
 # General
 alias l="ls -1"          # One line, no hiddens
 alias ll="ls -hola"      # Multi-line, hiddens, no group, file-size
@@ -54,7 +56,7 @@ alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias v='f -e vim'       # quick opening files with vim
+alias v='f -e nvim'       # quick opening files with vim
 
 # Apps
 alias chrome="open -a Google\ Chrome"
