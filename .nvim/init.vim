@@ -43,8 +43,9 @@ Plug 'tpope/vim-markdown', {'for': ['markdown']}
 Plug 'nelstrom/vim-markdown-folding', {'for': ['markdown']}
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'votl']}
 Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
-Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -330,6 +331,10 @@ let g:goyo_width = 80
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
 nnoremap <leader>w :Goyo<cr>
+
+" gist.vim ------------------------------------------------------
+let g:gist_post_private = 1
+let g:gist_show_privates = 1
 
 " ---------------------------------------------------------------
 " COMMANDS
