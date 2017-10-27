@@ -29,4 +29,4 @@ Thumbs.db
 
 .sass-cache*
 *.swp
-_scratch.md
+node_modules
