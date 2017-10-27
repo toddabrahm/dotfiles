@@ -18,7 +18,6 @@ Plug 'Shougo/unite-outline'
 Plug 'chemzqm/unite-location'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
@@ -146,7 +145,6 @@ nnoremap <right> <C-w>>
 nnoremap <leader>tm :SignatureToggle<cr>
 nnoremap <leader>sw :Switch<cr>
 nnoremap <leader>e :ALEToggle<cr>
-nnoremap <leader>nt :NERDTreeToggle<cr>
 
 " Edit and Source init.vim
 nnoremap <leader>ev :e $MYVIMRC<cr>
