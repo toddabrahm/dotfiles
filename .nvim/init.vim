@@ -280,13 +280,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Ale ---------------------------------------------------------
 let g:ale_linters = {
+\   'html': [''],
+\   'markdown': ['proselint', 'write-good'],
 \   'javascript': ['eslint'],
 \   'css': ['stylelint'],
 \   'scss': ['stylelint'],
-\   'html': ['proselint', 'write-good'],
-\   'markdown': ['proselint', 'write-good'],
 \}
 
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
@@ -378,3 +379,9 @@ augroup filetype_vue
     autocmd!
     autocmd FileType vue syntax sync fromstart
 augroup END
+
+augroup filetype_markdown
+    autocmd!
+    autocmd FileType markdown :ALEDisableBuffer
+augroup END
+
