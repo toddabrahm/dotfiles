@@ -2,3 +2,4 @@
 .nvim/plugged/
 .oh-my-zsh
 .netrwhist
+.nvim/autoload
