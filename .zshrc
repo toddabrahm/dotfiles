@@ -7,7 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dontblinks"
 DISABLE_AUTO_UPDATE="true"
 plugins=(git git-extras vi-mode osx vagrant)
-unsetopt correct_all
 fpath=(/usr/local/share/zsh-completions $fpath)
 export TERM=xterm-256color
 export EDITOR=nvim
@@ -28,6 +27,7 @@ export FZF_DEFAULT_OPTS='--color 16 --extended'
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 eval "$(fasd --init auto)"
+unsetopt correct_all
 
 # ----------------------------------------------------------------
 # BINDINGS
