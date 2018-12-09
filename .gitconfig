@@ -3,7 +3,7 @@
     email = todd@toddabrahm.com
 [core]
     excludesfile = ~/.gitignore_global
-    editor = nvim
+    editor = /usr/local/bin/nvim
 [color]
     ui = true
 [alias]
