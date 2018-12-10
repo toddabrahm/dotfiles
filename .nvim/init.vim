@@ -216,6 +216,10 @@ hi SpellBad cterm=underline,bold ctermfg=1
 " PLUGIN SETTINGS
 " ---------------------------------------------------------------
 
+" netrw -------------------------------------------------------
+let g:netrw_sort_by="time"
+let g:netrw_sort_direction="reverse"
+
 " Denite ------------------------------------------------------
 nnoremap <leader>u :Denite -mode=normal -unique -buffer-name=unite buffer file_rec<cr>
 nnoremap <leader>f :Denite -mode=normal -buffer-name=files file_rec<cr>
