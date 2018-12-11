@@ -44,6 +44,7 @@ Plug 'junegunn/goyo.vim', {'for': ['markdown', 'votl']}
 Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
+Plug 'tyru/open-browser.vim'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -219,6 +220,11 @@ hi SpellBad cterm=underline,bold ctermfg=1
 " netrw -------------------------------------------------------
 let g:netrw_sort_by="time"
 let g:netrw_sort_direction="reverse"
+
+" open-browswer.vim -------------------------------------------
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 
 " Denite ------------------------------------------------------
 nnoremap <leader>u :Denite -mode=normal -unique -buffer-name=unite buffer file_rec<cr>
