@@ -72,8 +72,7 @@ set timeoutlen=300
 set formatoptions=qrn1  " @TODO This is different than neovim defaults
 
 " UI options
-set guioptions=agi
-set number
+set signcolumn=yes
 set showmatch
 set mousehide
 set scrolloff=5
