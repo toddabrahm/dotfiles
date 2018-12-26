@@ -4,6 +4,7 @@ let maplocalleader = ",,"
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
-setlocal background=light
 setlocal nowrap
-colorscheme vo-solarized
+setlocal nonumber
+setlocal foldcolumn=0
+set foldlevel=1

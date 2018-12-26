@@ -6,6 +6,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
+Plug '$HOME/Github/booberry'
+Plug 'reedes/vim-colors-pencil'
+Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
@@ -45,6 +48,7 @@ Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tyru/open-browser.vim'
+Plug 'chrisbra/Colorizer'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
@@ -117,7 +121,7 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 set wildignore+=node_modules
 
 " Spelling
-" @TODO Do I need to change any of this for nvim?
+" TODO Do I need to change any of this for nvim?
 set dictionary=/usr/share/dict/words
 set spelllang=en_us
 set spellfile=~/.vim/custom-dictionary.en.utf-8.add,~/.vim-local-dictionary.en.utf-8.add
@@ -204,14 +208,59 @@ nnoremap <F1> <nop>
 " STYLES
 " ---------------------------------------------------------------
 
-colorscheme solarized
-set background=dark
-let g:airline_theme='solarized'
+" Global color fixes
+function! GlobalHighlights() abort
+    hi SignColumn guibg=NONE ctermbg=NONE
+    hi SignatureMarkText guibg=NONE ctermbg=NONE
+    hi SignatureMarkerText guibg=NON ctermbg=NONE
+endfunction
 
-" Global colorscheme fixes
-hi SignColumn ctermbg=NONE
-hi clear SpellBad
-hi SpellBad cterm=underline,bold ctermfg=1
+augroup GlobalColors
+    autocmd!
+    autocmd ColorScheme * call GlobalHighlights()
+augroup END
+
+if (has('termguicolors'))
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
+if ($ITERM_PROFILE == 'booberry-dark') || ($ITERM_PROFILE == 'booberry-light') || ($ITERM_PROFILE == 'dashboard')
+    set background=dark
+    let g:booberry_style='dark'
+    colorscheme booberry
+    let g:airline_theme='booberry'
+    if ($ITERM_PROFILE == 'booberry-light')
+        set background=light
+    endif
+elseif ($ITERM_PROFILE == 'atom-light') || ($ITERM_PROFILE == 'atom-dark')
+    set background=light
+    colorscheme one
+    let g:airline_theme='one'
+    let g:one_allow_italics = 1
+    if ($ITERM_PROFILE == 'atom-dark')
+        set background=dark
+    endif
+elseif ($ITERM_PROFILE == 'pencil-light') || ($ITERM_PROFILE == 'pencil-dark')
+    set background=light
+    colorscheme pencil
+    let g:airline_theme='pencil'
+    let g:pencil_neutral_headings = 1
+    let g:pencil_neutral_code_bg = 1
+    let g:pencil_terminal_italics = 1
+    if ($ITERM_PROFILE == 'pencil-dark')
+        set background=dark
+    endif
+elseif ($ITERM_PROFILE == 'solarized-light')
+    set notermguicolors
+    set background=light
+    colorscheme solarized
+else
+    set notermguicolors
+    set background=dark
+    colorscheme solarized
+endif
 
 " ---------------------------------------------------------------
 " PLUGIN SETTINGS
@@ -227,6 +276,10 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 " Denite ------------------------------------------------------
+call denite#custom#option('_', {
+    \ 'prompt': '>',
+    \ })
+
 nnoremap <leader>u :Denite -mode=normal -unique -buffer-name=unite buffer file_rec<cr>
 nnoremap <leader>f :Denite -mode=normal -buffer-name=files file_rec<cr>
 nnoremap <leader>b :Denite -mode=normal -buffer-name=buffers buffer<cr>
@@ -353,8 +406,15 @@ let g:gist_show_privates = 1
 command! TmuxStatus silent !tmux set status
 nnoremap <leader>ts :TmuxStatus<cr>
 
-" Open Finder Here
+" Open Finder here
 command! Finder silent !open .
+
+" Show highlight group
+command! HighlightGroup call SynGroup()
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
 
 " ---------------------------------------------------------------
 " AUTOCOMMANDS
@@ -373,10 +433,17 @@ augroup filetype_gitcommit
     autocmd FileType gitcommit setlocal spell spelllang=en_us
 augroup END
 
-" Set initial foldlevel for Vimoutliner files
+" Highlight @ & # tags in vimoutliner
+function! HighlightVimoutlinerTags() abort
+    syn match outlTags '_tag_\w*' contained
+    syn match outlTags '\s#\w*' contained
+    syn match outlTags '_ilink_\s*\(.\{-}:\s\)\?.*' contained
+    syn match outlTags '\s@\w*' contained
+endfunction
+
 augroup filetype_vimoutliner
     autocmd!
-    autocmd BufRead,BufNewFile *.otl set foldlevel=1
+    autocmd BufRead,BufNewFile *.otl call HighlightVimoutlinerTags()
 augroup END
 
 " Set filetype for Vagrantfiles
@@ -394,4 +461,3 @@ augroup filetype_markdown
     autocmd!
     autocmd FileType markdown :ALEDisableBuffer
 augroup END
-
