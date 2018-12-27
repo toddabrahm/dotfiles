@@ -194,9 +194,7 @@ nnoremap Y y$
 inoremap <C-U> <C-G>u<C-u>
 
 " Show highlighting groups for current word
-nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<cr>
+nnoremap <F10> :HighlightGroup<cr>
 
 " Disable unused mappings
 nnoremap K <nop>
