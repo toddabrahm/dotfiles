@@ -389,7 +389,8 @@ let g:gitgutter_realtime = 0
 let g:goyo_width = 80
 let g:goyo_margin_top = 2
 let g:goyo_margin_bottom =2
-nnoremap <leader>w :Goyo<cr>
+nnoremap <leader>z :Goyo<cr>
+nnoremap <leader>w :echoerr "DEPRECATED! Use <leader>z"<cr>
 
 " gist.vim ------------------------------------------------------
 let g:gist_post_private = 1
