@@ -43,7 +43,7 @@ Plug 'shawncplus/phpcomplete.vim', {'for': ['php', 'html']}
 Plug 'mattn/emmet-vim', {'for': ['html', 'markdown']}
 Plug 'tpope/vim-markdown', {'for': ['markdown']}
 Plug 'nelstrom/vim-markdown-folding', {'for': ['markdown']}
-Plug 'junegunn/goyo.vim', {'for': ['markdown', 'votl']}
+Plug 'junegunn/goyo.vim'
 Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
