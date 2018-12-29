@@ -310,6 +310,9 @@ call denite#custom#var('grep', 'final_opts', [])
 " Deoplete ----------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
+" Don't show popup until typing has paused briefly
+call deoplete#custom#option('auto_complete_delay', 500)
+
 " Use smartcase.
 let g:deoplete#enable_smart_case = 1
 
