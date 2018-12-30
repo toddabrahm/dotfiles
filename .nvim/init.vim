@@ -380,7 +380,7 @@ let g:airline_right_alt_sep = ''
 let g:polyglot_disabled = ['markdown']
 
 " Markdown.vim --------------------------------------------------
-let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'scss', 'xml', 'python', 'sh']
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'scss', 'xml', 'python', 'sh', 'c']
 
 " Markdown Folding
 let g:markdown_fold_style = 'nested'
