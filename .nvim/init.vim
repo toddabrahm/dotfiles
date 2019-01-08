@@ -6,7 +6,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
-Plug '$HOME/Github/booberry'
+Plug '$HOME/Repos/booberry'
 Plug 'reedes/vim-colors-pencil'
 Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
