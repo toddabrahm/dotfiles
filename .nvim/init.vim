@@ -46,6 +46,7 @@ Plug 'nelstrom/vim-markdown-folding', {'for': ['markdown']}
 Plug 'junegunn/goyo.vim'
 Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
 Plug 'sheerun/vim-polyglot'
+Plug 'posva/vim-vue'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tyru/open-browser.vim'
 Plug 'chrisbra/Colorizer'
