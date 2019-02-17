@@ -209,7 +209,7 @@ nnoremap <F1> <nop>
 function! GlobalHighlights() abort
     hi SignColumn guibg=NONE ctermbg=NONE
     hi SignatureMarkText guibg=NONE ctermbg=NONE
-    hi SignatureMarkerText guibg=NON ctermbg=NONE
+    hi SignatureMarkerText guibg=NONE ctermbg=NONE
 endfunction
 
 augroup GlobalColors
@@ -354,7 +354,6 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
-highlight ALEWarningSign ctermfg=3
 
 " Emmet -------------------------------------------------------
 let g:user_emmet_leader_key = '<c-e>'
