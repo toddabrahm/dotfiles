@@ -21,6 +21,7 @@ export PATH="/usr/local/bin:${PATH}"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"              # homebrew ruby
 export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"   # homebrew ruby gems
+export PATH="$HOME/bin:${PATH}"
 export PATH="$HOME/Dropbox/code/scripts/bin:${PATH}"
 [[ -s $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
