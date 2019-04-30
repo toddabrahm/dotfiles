@@ -278,8 +278,8 @@ call denite#custom#option('_', {
     \ 'prompt': '>',
     \ })
 
-nnoremap <leader>u :Denite -mode=normal -unique -buffer-name=unite buffer file_rec<cr>
-nnoremap <leader>f :Denite -mode=normal -buffer-name=files file_rec<cr>
+nnoremap <leader>u :Denite -mode=normal -unique -buffer-name=unite buffer file/rec<cr>
+nnoremap <leader>f :Denite -mode=normal -buffer-name=files file/rec<cr>
 nnoremap <leader>b :Denite -mode=normal -buffer-name=buffers buffer<cr>
 nnoremap <leader>g :Denite -mode=normal -buffer-name=grep grep<cr>
 nnoremap <leader>q :Denite -mode=normal -buffer-name=quickfix quickfix<cr>
