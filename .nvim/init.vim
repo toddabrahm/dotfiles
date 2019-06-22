@@ -71,6 +71,8 @@ set nrformats=
 set clipboard=unnamed
 set timeoutlen=300
 set formatoptions=qrn1  " @TODO This is different than neovim defaults
+set modelines=0
+set nomodeline
 
 " UI options
 set signcolumn=yes
