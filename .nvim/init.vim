@@ -280,25 +280,19 @@ call denite#custom#option('_', {
     \ 'prompt': '>',
     \ })
 
-nnoremap <leader>u :Denite -mode=normal -unique -buffer-name=unite buffer file/rec<cr>
-nnoremap <leader>f :Denite -mode=normal -buffer-name=files file/rec<cr>
-nnoremap <leader>b :Denite -mode=normal -buffer-name=buffers buffer<cr>
-nnoremap <leader>g :Denite -mode=normal -buffer-name=grep grep<cr>
-nnoremap <leader>q :Denite -mode=normal -buffer-name=quickfix quickfix<cr>
-nnoremap <leader>l :Denite -mode=normal -buffer-name=location_list location_list<cr>
-nnoremap <leader>c :Denite -mode=normal -buffer-name=changes change<cr>
-nnoremap <leader>j :Denite -mode=normal -buffer-name=jumps jump<cr>
-nnoremap <leader>h :Denite -mode=normal -buffer-name=help help<cr>
-nnoremap <leader>o :Denite -mode=normal -buffer-name=outline unite:outline<cr>
-
-" Use j & k to navigate denite buffers
-call denite#custom#map( 'insert', '<esc>', '<denite:leave_mode>',     'noremap')
-call denite#custom#map( 'insert', '<C-j>', '<denite:move_to_next_line>',     'noremap')
-call denite#custom#map( 'insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map( 'insert', '<C-l>', '<denite:redraw>', 'noremap')
+nnoremap <leader>u :Denite -unique -buffer-name=unite buffer file/rec<cr>
+nnoremap <leader>f :Denite -buffer-name=files file/rec<cr>
+nnoremap <leader>b :Denite -buffer-name=buffers buffer<cr>
+nnoremap <leader>g :Denite -buffer-name=grep grep<cr>
+nnoremap <leader>q :Denite -buffer-name=quickfix quickfix<cr>
+nnoremap <leader>l :Denite -buffer-name=location_list location_list<cr>
+nnoremap <leader>c :Denite -buffer-name=changes change<cr>
+nnoremap <leader>j :Denite -buffer-name=jumps jump<cr>
+nnoremap <leader>h :Denite -buffer-name=help help<cr>
+nnoremap <leader>o :Denite -buffer-name=outline unite:outline<cr>
 
 " Use ag for file_rec source
-call denite#custom#var('file_rec', 'command',
+call denite#custom#var('file/rec', 'command',
 	\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
 " Use ag for grep source
@@ -309,6 +303,22 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
+
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 
 " Deoplete ----------------------------------------------------
 let g:deoplete#enable_at_startup = 1
