@@ -389,7 +389,7 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
 " Polyglot syntax bundle ----------------------------------------
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'coffee-script']
 
 " Markdown.vim --------------------------------------------------
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'scss', 'xml', 'python', 'sh', 'c']
