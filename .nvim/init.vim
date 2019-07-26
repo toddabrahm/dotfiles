@@ -60,7 +60,7 @@ call plug#end()
 
 set encoding=utf-8
 set ffs=unix,dos
-set synmaxcol=800
+set synmaxcol=2000
 set hidden
 set noswapfile
 set nobackup
@@ -389,7 +389,7 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
 " Polyglot syntax bundle ----------------------------------------
-let g:polyglot_disabled = ['markdown', 'coffee-script']
+let g:polyglot_disabled = ['markdown', 'coffee-script', 'jsx']
 
 " Markdown.vim --------------------------------------------------
 let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'scss', 'xml', 'python', 'sh', 'c']
