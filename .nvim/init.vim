@@ -109,7 +109,6 @@ set t_vb=
 " Search
 set ignorecase
 set smartcase
-set gdefault
 
 " List characters
 set nolist
