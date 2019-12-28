@@ -349,9 +349,8 @@ augroup settings_deoplete
 augroup END
 
 " UltiSnips ---------------------------------------------------
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<c-y>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME.'/Dropbox/code/vim-snippets/']
 
 " Ale ---------------------------------------------------------
 let g:ale_linters = {
