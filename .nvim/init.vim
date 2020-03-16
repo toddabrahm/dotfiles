@@ -474,3 +474,8 @@ augroup filetype_markdown
     autocmd!
     autocmd FileType markdown :ALEDisableBuffer
 augroup END
+
+augroup highlight_todos_everywhere
+    autocmd!
+    autocmd Syntax * match Todo /\ctodo\|fixme/
+augroup END
