@@ -5,11 +5,8 @@
 " Load plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
 Plug '$HOME/Repos/booberry'
 Plug '$HOME/Repos/vim-statusline'
-Plug 'reedes/vim-colors-pencil'
-Plug 'rakr/vim-one'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -224,37 +221,10 @@ if (has('termguicolors'))
     set termguicolors
 endif
 
-if ($ITERM_PROFILE == 'booberry-dark') || ($ITERM_PROFILE == 'booberry-light') || ($ITERM_PROFILE == 'dashboard')
-    set background=dark
-    let g:booberry_style='dark'
-    colorscheme booberry
-    if ($ITERM_PROFILE == 'booberry-light')
-        set background=light
-    endif
-elseif ($ITERM_PROFILE == 'atom-light') || ($ITERM_PROFILE == 'atom-dark')
+set background=dark
+colorscheme booberry
+if ($ITERM_PROFILE == 'booberry-light')
     set background=light
-    colorscheme one
-    let g:one_allow_italics = 1
-    if ($ITERM_PROFILE == 'atom-dark')
-        set background=dark
-    endif
-elseif ($ITERM_PROFILE == 'pencil-light') || ($ITERM_PROFILE == 'pencil-dark')
-    set background=light
-    colorscheme pencil
-    let g:pencil_neutral_headings = 1
-    let g:pencil_neutral_code_bg = 1
-    let g:pencil_terminal_italics = 1
-    if ($ITERM_PROFILE == 'pencil-dark')
-        set background=dark
-    endif
-elseif ($ITERM_PROFILE == 'solarized-light')
-    set notermguicolors
-    set background=light
-    colorscheme solarized
-else
-    set notermguicolors
-    set background=dark
-    colorscheme solarized
 endif
 
 " ---------------------------------------------------------------
