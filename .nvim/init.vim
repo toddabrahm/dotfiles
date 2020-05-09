@@ -7,10 +7,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'altercation/vim-colors-solarized'
 Plug '$HOME/Repos/booberry'
+Plug '$HOME/Repos/vim-statusline'
 Plug 'reedes/vim-colors-pencil'
 Plug 'rakr/vim-one'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -229,14 +228,12 @@ if ($ITERM_PROFILE == 'booberry-dark') || ($ITERM_PROFILE == 'booberry-light') |
     set background=dark
     let g:booberry_style='dark'
     colorscheme booberry
-    let g:airline_theme='booberry'
     if ($ITERM_PROFILE == 'booberry-light')
         set background=light
     endif
 elseif ($ITERM_PROFILE == 'atom-light') || ($ITERM_PROFILE == 'atom-dark')
     set background=light
     colorscheme one
-    let g:airline_theme='one'
     let g:one_allow_italics = 1
     if ($ITERM_PROFILE == 'atom-dark')
         set background=dark
@@ -244,7 +241,6 @@ elseif ($ITERM_PROFILE == 'atom-light') || ($ITERM_PROFILE == 'atom-dark')
 elseif ($ITERM_PROFILE == 'pencil-light') || ($ITERM_PROFILE == 'pencil-dark')
     set background=light
     colorscheme pencil
-    let g:airline_theme='pencil'
     let g:pencil_neutral_headings = 1
     let g:pencil_neutral_code_bg = 1
     let g:pencil_terminal_italics = 1
@@ -376,16 +372,6 @@ let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 let delimitMate_matchpairs = "(:),[:],{:}"
 let delimitMate_balance_matchpairs = 1
-
-" Airline -----------------------------------------------------
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
 
 " Polyglot syntax bundle ----------------------------------------
 let g:polyglot_disabled = ['markdown', 'coffee-script', 'jsx']
