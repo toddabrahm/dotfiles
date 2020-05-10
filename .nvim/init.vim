@@ -46,7 +46,6 @@ Plug 'posva/vim-vue'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'tyru/open-browser.vim'
 Plug 'chrisbra/Colorizer'
-Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
