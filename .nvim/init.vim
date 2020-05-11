@@ -11,7 +11,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
-Plug 'Shougo/neoyank.vim/'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/unite-outline'
 Plug 'chemzqm/unite-location'
