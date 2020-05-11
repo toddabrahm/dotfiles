@@ -40,7 +40,7 @@ Plug 'mattn/emmet-vim', {'for': ['html', 'markdown']}
 Plug 'tpope/vim-markdown', {'for': ['markdown']}
 Plug 'nelstrom/vim-markdown-folding', {'for': ['markdown']}
 Plug 'junegunn/goyo.vim'
-Plug 'prettier/vim-prettier', {'for': ['javascript', 'jsx', 'css', 'scss']}
+Plug 'prettier/vim-prettier', {'for': ['javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'vue', 'yaml', 'html']}
 Plug 'sheerun/vim-polyglot'
 Plug 'posva/vim-vue'
 Plug 'tyru/open-browser.vim'
@@ -228,6 +228,10 @@ endif
 " ---------------------------------------------------------------
 " PLUGIN SETTINGS
 " ---------------------------------------------------------------
+
+" Prettier ----------------------------------------------------
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " netrw -------------------------------------------------------
 let g:netrw_sort_by="time"
