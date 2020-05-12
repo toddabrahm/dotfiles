@@ -11,9 +11,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/unite-outline'
-Plug 'chemzqm/unite-location'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'tomtom/tcomment_vim'
@@ -251,11 +248,11 @@ nnoremap <leader>f :Denite -buffer-name=files file/rec<cr>
 nnoremap <leader>b :Denite -buffer-name=buffers buffer<cr>
 nnoremap <leader>g :Denite -buffer-name=grep grep<cr>
 nnoremap <leader>q :Denite -buffer-name=quickfix quickfix<cr>
-nnoremap <leader>l :Denite -buffer-name=location_list location_list<cr>
 nnoremap <leader>c :Denite -buffer-name=changes change<cr>
 nnoremap <leader>j :Denite -buffer-name=jumps jump<cr>
 nnoremap <leader>h :Denite -buffer-name=help help<cr>
-nnoremap <leader>o :Denite -buffer-name=outline unite:outline<cr>
+nnoremap <leader>o :Denite -buffer-name=outline outline<cr>
+nnoremap <leader>t :Denite -buffer-name=tags tag<cr>
 
 " Use ag for file_rec source
 call denite#custom#var('file/rec', 'command',
@@ -269,6 +266,9 @@ call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
+
+" Disable sorting in outline in favor of source order
+call denite#custom#var('outline', 'command', ['ctags', '--sort=0'])
 
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
