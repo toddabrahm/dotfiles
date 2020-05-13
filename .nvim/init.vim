@@ -292,7 +292,7 @@ let g:deoplete#enable_at_startup = 1
 " Don't show popup until typing has paused briefly
 " Use smartcase.
 call deoplete#custom#option({
-    \ 'auto_complete_delay': 200,
+    \ 'auto_complete_delay': 500,
     \ 'smart_case': v:true,
     \ })
 
