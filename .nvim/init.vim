@@ -103,7 +103,6 @@ set smartcase
 " List characters
 set nolist
 set listchars=tab:▸\ ,eol:¬,trail:█,extends:>,precedes:<
-set cpoptions+=$
 
 " Session options
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
@@ -289,10 +288,8 @@ endfunction
 " Deoplete ----------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 
-" Don't show popup until typing has paused briefly
-" Use smartcase.
 call deoplete#custom#option({
-    \ 'auto_complete_delay': 500,
+    \ 'auto_complete_delay': 200,
     \ 'smart_case': v:true,
     \ })
 
