@@ -231,6 +231,8 @@ let g:prettier#autoformat_require_pragma = 0
 " netrw -------------------------------------------------------
 let g:netrw_sort_by="time"
 let g:netrw_sort_direction="reverse"
+let g:netrw_browse_split=0
+let g:netrw_liststyle=3
 
 " open-browswer.vim -------------------------------------------
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
