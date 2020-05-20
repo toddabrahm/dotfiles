@@ -31,3 +31,4 @@ Thumbs.db
 *.swp
 node_modules
 .netrwhist
+tags
